@@ -45,3 +45,7 @@
 🚧 Unsolved Problems:
 
 🤞🏼 Future Features:
+
+- Order food online
+- Make reservations online
+- Menu item show page, every item must have a picture.
