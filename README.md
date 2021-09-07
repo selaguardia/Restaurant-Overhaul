@@ -1,6 +1,6 @@
 🖥 Link to hosted app: 
 
-  https//:www.heroku.com
+  https://www.heroku.com
 
 ✏️ Description:
 
