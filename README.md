@@ -36,10 +36,11 @@
 
 ✏️ Wireframes:
 ![Wireframe - Landing Page](/planning/landingPage.png)
-![Wireframe - Menu Show Page](/planning/menuShow.png)
+![Wireframe - Menu Show Page](/planning/menuShowPage.png)
 ![Wireframe - Menu Create Page](/planning/createItem.png)
 
 ✏️ ERD:
+![ERD] (/planning/erd.jpeg)
 
 🚧 Unsolved Problems:
 
