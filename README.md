@@ -40,7 +40,7 @@
 ![Wireframe - Menu Create Page](/planning/createItem.png)
 
 ✏️ ERD:
-![ERD] (/planning/erd.jpeg)
+![ERD](/planning/erd.jpeg)
 
 🚧 Unsolved Problems:
 
