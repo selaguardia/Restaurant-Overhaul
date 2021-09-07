@@ -42,6 +42,14 @@
 ✏️ ERD:
 ![ERD](/planning/erd.jpeg)
 
+💎 Milestones:
+- 9/7/21 ⇒ Create boilerplate and get the server running
+- 9/9/21 ⇒ Models / Views
+- 9/12/21 ⇒ Controllers / Routes
+- 9/13/21 ⇒ User Authentication / Authorization
+- 9/14/21 ⇒ Styling
+- 9/15/21 ⇒ Deployment
+
 🚧 Unsolved Problems:
 
 🤞🏼 Future Features:
