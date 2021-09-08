@@ -3,6 +3,8 @@ const app = express();
 const menuCtrls = require("./controllers/menu_controllers.js");
 const methodOverride = require("method-override");
 
+require('./controllers/config/db.connections.js')
+
 const PORT = 4000;
 
 // Middleware
