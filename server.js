@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-
+const menuCtrls = require('./controllers/menu_controllers.js');
 
 const PORT = 4000;
 
@@ -10,39 +10,12 @@ app.use((req, res, next) => {
 	console.log(`${req.method} ${req.originalUrl}`);    
 	next();
 });
+app.use('/', menuCtrls);
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 
-// Index Route
-app.get("/", (req, res) => {
-  res.render("index");
-});
 
-// Create Route
-app.get("/new", (req, res) => {
-  res.render("create");
-});
-
-// Post Route
-app.post("/", (req, res) => {
-  res.send("<h1>Home Page</h1>");
-});
-
-// Edit Routes
-app.get("/:id/edit", (req, res) => {
-  res.render("edit");
-});
-
-// Update Routes
-app.put("/:id", (req, res) => {
-  res.send("<h1>Home Page</h1>");
-});
-
-// Delete Route
-app.delete("/:id", (req, res) => {
-  res.send("<h1>Home Page</h1>");
-});
 
 // 404 page
 app.use("/*", (req, res) => {
