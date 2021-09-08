@@ -1,19 +1,22 @@
 const express = require("express");
-const app = express();
-const menuCtrls = require("./controllers/menu_controllers.js");
 const methodOverride = require("method-override");
 
-require('./controllers/config/db.connections.js')
+const app = express();
 
 const PORT = 4000;
 
+const menuCtrls = require("./controllers/menu_controllers.js");
+
+require('./config/db.connections.js')
+
+
 // Middleware
+app.set("view engine", "ejs");
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.originalUrl}`);
   next();
 });
 app.use("/", menuCtrls);
-app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
