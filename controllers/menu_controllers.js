@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../models/Menu");
+const db = require("../models");
 
 // Index Route
 router.get("/", (req, res) => {
@@ -19,7 +19,7 @@ router.get("/", (req, res) => {
   });
 });
 
-// Create Form Route
+// New Item Form Route
 router.get("/new", (req, res, next) => {
   res.render("create");
 });

@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+// require("../config/db.connections");
 
-const menuSchema = new Schema(
+const MenuSchema = new Schema(
   {
     name: {
       type: String,
@@ -40,5 +41,5 @@ const menuSchema = new Schema(
   }
 );
 
-const Menu = mongoose.model('Menu', menuSchema);
+const Menu = mongoose.model('Menu', MenuSchema);
 module.exports = Menu;
