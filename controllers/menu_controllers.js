@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 
-// Index Route
+// Index Route for Landing Page
 router.get("/", (req, res) => {
   db.Menu.find({}, (error, allMenuItems) => {
     if (error) {
@@ -19,10 +19,43 @@ router.get("/", (req, res) => {
   });
 });
 
+// Menu Route
+router.get("/menu", (req, res) => {
+  db.Menu.find({}, (error, allMenuItems) => {
+    if (error) {
+      console.log(error);
+      req.error = error;
+      return next();
+    }
+
+    const context = {
+      menuItems: allMenuItems,
+    };
+
+    res.render("menu", context);
+  });
+});
+
 // New Item Form Route
 router.get("/new", (req, res, next) => {
-  res.render("create");
+  res.render("new");
 });
+
+// About Us Route
+router.get("/about", (req, res, next) => {
+  res.render("about");
+});
+
+// Banquets Route
+router.get("/banquets", (req, res, next) => {
+  res.render("banquets");
+});
+
+// Contact Us Route
+router.get("/contact", (req, res, next) => {
+  res.render("contact");
+});
+
 
 // Show Routes
 router.get("/:id", (req, res, next) => {
@@ -48,7 +81,7 @@ router.post("/", (req, res) => {
 
       const context = { error };
 
-      return res.render("create", context);
+      return res.render("new", context);
     }
     return res.redirect(`/menu`);
   });
@@ -91,7 +124,7 @@ router.put("/:id", (req, res) => {
     }
   );
   if (error) return console.log(error);
-  res.send("<h1>Home Page</h1>");
+  res.send("FIX ME");
 });
 
 // Delete Route
