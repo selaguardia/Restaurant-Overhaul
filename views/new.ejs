@@ -3,6 +3,102 @@
   <%- include('partials/head.ejs', { page: 'Add Menu Item'}) %>
   <body>
     <%- include('partials/nav.ejs') %>
-    <h1>New Item</h1>
+    <div class="container">
+      
+      <div class="row">
+        <div class="col-12">
+          <h1 class="display-4 text-center">Add New Menu Item</h1>
+        </div>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-2"></div>
+
+        <div class="col">
+          
+          <form>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Name</span>
+              <input
+                type="text"
+                class="form-control"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+  
+            <label for="lunchPrice" class="form-label">Lunch Price</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text">$</span>
+              <input
+                id="lunchPrice"
+                type="text"
+                class="form-control"
+                aria-label="Amount (to the nearest dollar)"
+              />
+            </div>
+  
+            <label for="dinnerPrice" class="form-label">Dinner Price</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text">$</span>
+              <input
+                id="dinnerPrice"
+                type="text"
+                class="form-control"
+                aria-label="Amount (to the nearest dollar)"
+              />
+            </div>
+  
+            <!-- Food Description -->
+            <div class="input-group mb-3">
+              <span class="input-group-text">Description:</span>
+              <textarea
+                class="form-control"
+                aria-label="With textarea"
+              ></textarea>
+            </div>
+  
+            <!-- Menu Item Photo -->
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon3"
+                >Photo (optional)</span
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="basic-url"
+                aria-describedby="basic-addon3"
+              />
+            </div>
+  
+            <div class="col-md">
+              <div class="form-floating">
+                <select
+                  class="form-select"
+                  id="floatingSelectGrid"
+                  aria-label="Floating label select example"
+                >
+                  <option selected>Food Category</option>
+                  <option value="1">Appetizers</option>
+                  <option value="2">Soup & Salad</option>
+                  <option value="3">Pasta</option>
+                  <option value="4">Sandwiches</option>
+                  <option value="5">Meat & Poultry</option>
+                  <option value="6">Pizza</option>
+                  <option value="7">Seafood</option>
+                  <option value="8">Dessert</option>
+                </select>
+              </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+          </form>
+        </div>
+        
+        <div class="col-2"></div>
+
+      </div>
+    </div>
   </body>
 </html>
