@@ -3,5 +3,111 @@
   <%- include('partials/head.ejs', { page: 'Edit Menu Item'}) %>
   <body>
     <%- include('partials/nav.ejs') %>
+
+      <div class="container">
+        
+        <div class="row">
+          <div class="col-12">
+            <h1 class="display-4 text-center">Edit Menu Item</h1>
+          </div>
+        </div>
+        
+        <div class="row">
+  
+          <div class="col-2"></div>
+  
+          <div class="col">
+            
+            <form action="/menu" method="POST">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Name</span>
+                <input
+                  name="dishName"
+                  id="dishName"
+                  type="text"
+                  class="form-control"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+  
+              <div class="input-group mb-3">
+                <span class="input-group-text">Description:</span>
+                <textarea
+                  name="descripton"
+                  id="description"
+                  class="form-control"
+                  aria-label="With textarea"
+                ></textarea>
+              </div>
+  
+              <div class="d-flex">
+                <label for="lunchPrice" class="form-label p-2">Lunch Price</label>
+                <div class="input-group mb-3">
+                  <span class="input-group-text">$</span>
+                  <input
+                    name="lunchPrice"
+                    id="lunchPrice"
+                    type="text"
+                    class="form-control"
+                    aria-label="Amount (to the nearest dollar)"
+                  />
+                </div>
+      
+                <label for="dinnerPrice" class="form-label p-2">Dinner Price</label>
+                <div class="input-group mb-3">
+                  <span class="input-group-text">$</span>
+                  <input
+                    name="dinnerPrice"
+                    id="dinnerPrice"
+                    type="text"
+                    class="form-control"
+                    aria-label="Amount (to the nearest dollar)"
+                  />
+                </div>
+              </div>
+    
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon3"
+                  >Photo (optional)</span
+                >
+                <input
+                  name="foodPhoto"
+                  id="foodPhoto"
+                  type="text"
+                  class="form-control"
+                  aria-describedby="basic-addon3"
+                />
+              </div>
+    
+              <div class="col-md">
+                <div class="form-floating">
+                  <select
+                    name="category"
+                    class="form-select"
+                    id="floatingSelectGrid"
+                    aria-label="Floating label select example"
+                  >
+                    <option selected>Food Category</option>
+                    <option value="1">Appetizers</option>
+                    <option value="2">Soup & Salad</option>
+                    <option value="3">Pasta</option>
+                    <option value="4">Sandwiches</option>
+                    <option value="5">Meat & Poultry</option>
+                    <option value="6">Pizza</option>
+                    <option value="7">Seafood</option>
+                    <option value="8">Dessert</option>
+                  </select>
+                </div>
+              </div>
+              
+              <button type="submit" class="btn btn-primary mt-3">Update</button>
+            </form>
+          </div>
+          
+          <div class="col-2"></div>
+  
+        </div>
+      </div>
   </body>
 </html>

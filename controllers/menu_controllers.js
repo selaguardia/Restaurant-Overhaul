@@ -2,24 +2,27 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 
-// Index Route for Landing Page
-router.get("/", (req, res) => {
-  db.Menu.find({}, (error, allMenuItems) => {
-    if (error) {
-      console.log(error);
-      req.error = error;
-      return next();
-    }
-
-    const context = {
-      menuItems: allMenuItems,
-    };
-
-    res.render("index", context);
-  });
+// Home Route
+router.get("/home", (req, res, next) => {
+  res.render("home");
 });
 
-// Menu Route
+// About Us Route
+router.get("/about", (req, res, next) => {
+  res.render("about");
+});
+
+// Banquets Route
+router.get("/banquets", (req, res, next) => {
+  res.render("banquets");
+});
+
+// Contact Route
+router.get("/contact", (req, res, next) => {
+  res.render("contact");
+});
+
+// Menu GET Route
 router.get("/menu", (req, res) => {
   db.Menu.find({}, (error, allMenuItems) => {
     if (error) {
@@ -36,44 +39,30 @@ router.get("/menu", (req, res) => {
   });
 });
 
-// About Us Route
-router.get("/about", (req, res, next) => {
-  res.render("about");
-});
-
-// Banquets Route
-router.get("/banquets", (req, res, next) => {
-  res.render("banquets");
-});
-
-// Contact Us Route
-router.get("/contact", (req, res, next) => {
-  res.render("contact");
-});
-
 // New Item Form GET Route
-router.get("/new", (req, res) => {
+router.get("menu/new", (req, res) => {
   res.render("new");
 });
 
-// Create New Item POST Route
-// router.post("/", (req, res, next) => {
-//   db.Menu.create(req.body, (error, createdMenuItem) => {
-//     if (error) {
-//       console.log(error);
-//       req.error = error;
+// Create Item POST Route
+router.post("/", (req, res, next) => {
+  db.Menu.create(req.body, (error, createdMenuItem) => {
+    if (error) {
+      console.log(error);
+      req.error = error;
 
-//       const context = {
-//         error,
-//       };
-//     }
-//     const context = {
-//       menuItem: createdMenuItem,
-//     };
-//     return res.render("new", context);
-//   });
-//   return res.redirect(`/menu/${createdMenuItem.id}`);
-// });
+      const context = {
+        error,
+      };
+    }
+    const context = {
+      menuItem: createdMenuItem,
+    };
+    return res.render("new", context);
+  });
+  console.log("Successfully added to menu!")
+  return res.redirect(`/menu`);
+});
 
 // router.post("/", (req, res, next) => {
 //   db.Menu.create(req.body, (error, createdMenuItem) => {
@@ -93,23 +82,23 @@ router.get("/new", (req, res) => {
 //   });
 // });
 
-// Show Routes
-// router.get("/:id", (req, res) => {
-//   db.Menu.findById(req.params.id, (error, foundMenuItem) => {
-//     if (error) {
-//       console.log(error);
-//       req.error = error;
-//       return next();
-//     }
-//     const context = {
-//       menuItem: foundMenuItem,
-//     };
-//     return res.render("show", context);
-//   });
-// });
+// Menu Item Show Route
+router.get("/menu/:id", (req, res) => {
+  db.Menu.findById(req.params.id, (error, foundMenuItem) => {
+    if (error) {
+      console.log(error);
+      req.error = error;
+      return next();
+    }
+    const context = {
+      menuItem: foundMenuItem,
+    };
+    return res.render("show", context);
+  });
+});
 
 // Edit GET Route
-router.get("/:id/edit", (req, res) => {
+router.get("/menu/:id/edit", (req, res) => {
   db.Menu.findById(req.params.id, (error, foundMenuItem) => {
     if (error) {
       console.log(error);
@@ -124,7 +113,7 @@ router.get("/:id/edit", (req, res) => {
 });
 
 // Update POST Routes
-router.put("/:id", (req, res) => {
+router.put("/menu/:id", (req, res) => {
   db.Menu.findByIdAndUpdate(
     req.params.id,
     {
@@ -149,7 +138,7 @@ router.put("/:id", (req, res) => {
 });
 
 // Delete Route
-router.delete("/:id", (req, res) => {
+router.delete("/menu/:id", (req, res) => {
   db.Menu.findByIdAndDelete(req.params.id, (error, deletedMenuItem) => {
     if (error) {
       console.log(error);
