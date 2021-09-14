@@ -40,12 +40,12 @@ router.get("/menu", (req, res) => {
 });
 
 // New Item Form GET Route
-router.get("menu/new", (req, res) => {
+router.get("/menu/new", (req, res) => {
   res.render("new");
 });
 
 // Create Item POST Route
-router.post("/", (req, res, next) => {
+router.post("/menu", (req, res, next) => {
   db.Menu.create(req.body, (error, createdMenuItem) => {
     if (error) {
       console.log(error);
@@ -64,7 +64,7 @@ router.post("/", (req, res, next) => {
   return res.redirect(`/menu`);
 });
 
-// router.post("/", (req, res, next) => {
+// router.post("/menu", (req, res, next) => {
 //   db.Menu.create(req.body, (error, createdMenuItem) => {
 //     if (error) {
 //       console.log(error);
@@ -83,7 +83,7 @@ router.post("/", (req, res, next) => {
 // });
 
 // Menu Item Show Route
-router.get("/menu/:id", (req, res) => {
+router.get("/menu/:id", (req, res, next) => {
   db.Menu.findById(req.params.id, (error, foundMenuItem) => {
     if (error) {
       console.log(error);
