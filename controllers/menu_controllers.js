@@ -94,19 +94,19 @@ router.get("/new", (req, res) => {
 // });
 
 // Show Routes
-router.get("/:id", (req, res) => {
-  db.Menu.findById(req.params.id, (error, foundMenuItem) => {
-    if (error) {
-      console.log(error);
-      req.error = error;
-      return next();
-    }
-    const context = {
-      menuItem: foundMenuItem,
-    };
-    return res.render("show", context);
-  });
-});
+// router.get("/:id", (req, res) => {
+//   db.Menu.findById(req.params.id, (error, foundMenuItem) => {
+//     if (error) {
+//       console.log(error);
+//       req.error = error;
+//       return next();
+//     }
+//     const context = {
+//       menuItem: foundMenuItem,
+//     };
+//     return res.render("show", context);
+//   });
+// });
 
 // Edit GET Route
 router.get("/:id/edit", (req, res) => {
