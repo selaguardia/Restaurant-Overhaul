@@ -36,11 +36,6 @@ router.get("/menu", (req, res) => {
   });
 });
 
-// New Item Form Route
-router.get("/new", (req, res, next) => {
-  res.render("new");
-});
-
 // About Us Route
 router.get("/about", (req, res, next) => {
   res.render("about");
@@ -56,9 +51,50 @@ router.get("/contact", (req, res, next) => {
   res.render("contact");
 });
 
+// New Item Form GET Route
+router.get("/new", (req, res) => {
+  res.render("new");
+});
+
+// Create New Item POST Route
+// router.post("/", (req, res, next) => {
+//   db.Menu.create(req.body, (error, createdMenuItem) => {
+//     if (error) {
+//       console.log(error);
+//       req.error = error;
+
+//       const context = {
+//         error,
+//       };
+//     }
+//     const context = {
+//       menuItem: createdMenuItem,
+//     };
+//     return res.render("new", context);
+//   });
+//   return res.redirect(`/menu/${createdMenuItem.id}`);
+// });
+
+// router.post("/", (req, res, next) => {
+//   db.Menu.create(req.body, (error, createdMenuItem) => {
+//     if (error) {
+//       console.log(error);
+//       req.error = error;
+
+//       const context = {
+//         error,
+//       };
+
+//       return res.render("new", context);
+//     }
+
+//     // to avoid errors lets redirect the user to our index route and after we refactor show we can put it back how we had it.
+//     return res.redirect(`/menu`);
+//   });
+// });
 
 // Show Routes
-router.get("/:id", (req, res, next) => {
+router.get("/:id", (req, res) => {
   db.Menu.findById(req.params.id, (error, foundMenuItem) => {
     if (error) {
       console.log(error);
@@ -72,22 +108,7 @@ router.get("/:id", (req, res, next) => {
   });
 });
 
-// Post Route
-router.post("/", (req, res) => {
-  db.Menu.create(req.body, (error, createdMenuItem) => {
-    if (error) {
-      console.log(error);
-      req.error = error;
-
-      const context = { error };
-
-      return res.render("new", context);
-    }
-    return res.redirect(`/menu`);
-  });
-});
-
-// Edit Routes
+// Edit GET Route
 router.get("/:id/edit", (req, res) => {
   db.Menu.findById(req.params.id, (error, foundMenuItem) => {
     if (error) {
@@ -102,7 +123,7 @@ router.get("/:id/edit", (req, res) => {
   });
 });
 
-// Update Routes
+// Update POST Routes
 router.put("/:id", (req, res) => {
   db.Menu.findByIdAndUpdate(
     req.params.id,

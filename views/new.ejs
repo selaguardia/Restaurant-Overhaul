@@ -17,57 +17,64 @@
 
         <div class="col">
           
-          <form>
+          <form action="/menu" method="POST">
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon1">Name</span>
               <input
+                name="dishName"
+                id="dishName"
                 type="text"
                 class="form-control"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
               />
             </div>
-  
-            <label for="lunchPrice" class="form-label">Lunch Price</label>
-            <div class="input-group mb-3">
-              <span class="input-group-text">$</span>
-              <input
-                id="lunchPrice"
-                type="text"
-                class="form-control"
-                aria-label="Amount (to the nearest dollar)"
-              />
-            </div>
-  
-            <label for="dinnerPrice" class="form-label">Dinner Price</label>
-            <div class="input-group mb-3">
-              <span class="input-group-text">$</span>
-              <input
-                id="dinnerPrice"
-                type="text"
-                class="form-control"
-                aria-label="Amount (to the nearest dollar)"
-              />
-            </div>
-  
-            <!-- Food Description -->
+
             <div class="input-group mb-3">
               <span class="input-group-text">Description:</span>
               <textarea
+                name="descripton"
+                id="description"
                 class="form-control"
                 aria-label="With textarea"
               ></textarea>
             </div>
+
+            <div class="d-flex">
+              <label for="lunchPrice" class="form-label p-2">Lunch Price</label>
+              <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <input
+                  name="lunchPrice"
+                  id="lunchPrice"
+                  type="text"
+                  class="form-control"
+                  aria-label="Amount (to the nearest dollar)"
+                />
+              </div>
+    
+              <label for="dinnerPrice" class="form-label p-2">Dinner Price</label>
+              <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <input
+                  name="dinnerPrice"
+                  id="dinnerPrice"
+                  type="text"
+                  class="form-control"
+                  aria-label="Amount (to the nearest dollar)"
+                />
+              </div>
+            </div>
   
-            <!-- Menu Item Photo -->
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon3"
                 >Photo (optional)</span
               >
               <input
+                name="foodPhoto"
+                id="foodPhoto"
                 type="text"
                 class="form-control"
-                id="basic-url"
                 aria-describedby="basic-addon3"
               />
             </div>
@@ -75,6 +82,7 @@
             <div class="col-md">
               <div class="form-floating">
                 <select
+                  name="category"
                   class="form-select"
                   id="floatingSelectGrid"
                   aria-label="Floating label select example"

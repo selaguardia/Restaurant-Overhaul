@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const MenuSchema = new Schema(
   {
-    name: {
+    dishName: {
       type: String,
       required: [true, "What is the dish called?"],
       unique: true,
@@ -32,7 +32,7 @@ const MenuSchema = new Schema(
       required: [true, "Select food category"],
     },
 
-    image: {
+    foodPhoto: {
       type: String,
     },
   },

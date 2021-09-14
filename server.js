@@ -8,6 +8,11 @@ const PORT = process.env.PORT || 4000;
 
 const menuCtrls = require("./controllers/menu_controllers.js");
 
+app.use((req, res, next) => {
+  console.log(`METHOD:${req.method} \nOG-URL:${req.originalUrl}`);
+  next();
+});
+
 require('./config/db.connections.js')
 
 // Middleware
@@ -18,10 +23,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 
 // Route call for middle ware
-app.use((req, res, next) => {
-  console.log(`${req.method} ${req.originalUrl}`);
-  next();
-});
 
 // 404 page
 app.use("/*", (req, res) => {
