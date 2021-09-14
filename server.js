@@ -6,7 +6,7 @@ const app = express();
 
 const PORT = process.env.PORT || 4000;
 
-const menuCtrls = require("./controllers/menu_controllers.js");
+const controllers = require("./controllers");
 
 app.use((req, res, next) => {
   console.log(`METHOD:${req.method} \nOG-URL:${req.originalUrl}`);
@@ -18,7 +18,8 @@ require('./config/db.connections.js')
 // Middleware
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
-app.use("/", menuCtrls);
+app.use("/menu", controllers.menu);
+app.use("/", controllers.other);
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 
