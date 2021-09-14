@@ -28,6 +28,7 @@ router.get("/new", (req, res) => {
 
 // Create Item POST Route
 router.post("/", (req, res, next) => {
+  console.log(req.body)
   db.Menu.create(req.body, (error, createdMenuItem) => {
     if (error) {
       console.log(error);
@@ -36,13 +37,13 @@ router.post("/", (req, res, next) => {
       const context = {
         error,
       };
+      return res.render("new", context);
     }
     const context = {
       menuItem: createdMenuItem,
     };
     return res.render("new", context);
   });
-  console.log("Successfully added to menu!")
   return res.redirect(`/menu`);
 });
 
@@ -113,10 +114,7 @@ router.put("/:id", (req, res) => {
         return next();
       }
       return res.redirect(`/menu/${updatedMenuItem.id}`);
-    }
-  );
-  if (error) return console.log(error);
-  res.send("FIX ME");
+    });
 });
 
 // Delete Route
