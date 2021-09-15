@@ -1,9 +1,8 @@
 const express = require("express");
 const router = express.Router();
-// const db = require("../models");
 
 // Home Route
-router.get("/home", (req, res, next) => {
+router.get("/", (req, res, next) => {
   res.render("home");
 });
 
