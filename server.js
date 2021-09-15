@@ -1,12 +1,9 @@
 const express = require("express");
 const methodOverride = require("method-override");
-require("dotenv").config();
-
 const app = express();
-
-
 const controllers = require("./controllers");
 
+require("dotenv").config();
 
 app.use((req, res, next) => {
   console.log(`METHOD:${req.method} \nOG-URL:${req.originalUrl}`);
@@ -16,18 +13,16 @@ app.use((req, res, next) => {
 require('./config/db.connections.js')
 
 // Middleware
-  // Body parser
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));   // Body parser
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 
 // For update / delete
 app.use(methodOverride('_method'));
+
 // For routes
 app.use("/menu", controllers.menu);
 app.use("/", controllers.other);
-
-// Route call for middle ware
 
 // 404 page
 app.use("/*", (req, res) => {
