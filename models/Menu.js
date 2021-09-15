@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-// require("../config/db.connections");
 
 const MenuSchema = new Schema(
   {
@@ -35,6 +34,10 @@ const MenuSchema = new Schema(
     foodPhoto: {
       type: String,
     },
+    user: {
+      type: mongoose.Types.ObjectId,
+      ref: "User"
+    }
   },
   {
     timestamps: true,

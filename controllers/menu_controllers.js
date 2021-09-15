@@ -28,26 +28,33 @@ router.get("/new", (req, res) => {
 
 // Create Item POST Route
 router.post("/", (req, res, next) => {
-  console.log(req.body)
+
   db.Menu.create(req.body, (error, createdMenuItem) => {
+
+  
+    
+    console.log("*** req.body ====>", req.body);
+    
     if (error) {
-      console.log(error);
       req.error = error;
 
       const context = {
         error,
       };
+      console.log(error);
       return res.render("new", context);
     }
+  
     const context = {
       menuItem: createdMenuItem,
     };
-    return res.render("new", context);
+    console.log(createdMenuItem);
+    // return res.render("new", context);
+    return res.redirect(`/menu`);
   });
-  return res.redirect(`/menu`);
 });
 
-// router.post("/menu", (req, res, next) => {
+// router.post("/", (req, res, next) => {
 //   db.Menu.create(req.body, (error, createdMenuItem) => {
 //     if (error) {
 //       console.log(error);

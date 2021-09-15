@@ -33,10 +33,11 @@
             <div class="input-group mb-3">
               <span class="input-group-text">Description:</span>
               <textarea
-                name="descripton"
+                name="description"
                 id="description"
                 class="form-control"
                 aria-label="With textarea"
+                type="text"
               ></textarea>
             </div>
 
@@ -47,7 +48,7 @@
                 <input
                   name="lunchPrice"
                   id="lunchPrice"
-                  type="text"
+                  type="number"
                   class="form-control"
                   aria-label="Amount (to the nearest dollar)"
                 />
@@ -59,7 +60,7 @@
                 <input
                   name="dinnerPrice"
                   id="dinnerPrice"
-                  type="text"
+                  type="number"
                   class="form-control"
                   aria-label="Amount (to the nearest dollar)"
                 />
@@ -83,7 +84,7 @@
               <div class="form-floating">
                 <select
                   name="category"
-                  class="form-select"
+                  class="form-select form-control"
                   id="floatingSelectGrid"
                   aria-label="Floating label select example"
                 >
@@ -99,7 +100,6 @@
                 </select>
               </div>
             </div>
-            
             <button type="submit" class="btn btn-primary mt-3">Submit</button>
           </form>
         </div>

@@ -16,12 +16,16 @@ app.use((req, res, next) => {
 require('./config/db.connections.js')
 
 // Middleware
+  // Body parser
+app.use(express.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
+
+// For update / delete
+app.use(methodOverride('_method'));
+// For routes
 app.use("/menu", controllers.menu);
 app.use("/", controllers.other);
-app.use(express.urlencoded({ extended: false }));
-app.use(methodOverride('_method'));
 
 // Route call for middle ware
 
