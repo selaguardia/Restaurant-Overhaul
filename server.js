@@ -1,6 +1,5 @@
 const express = require("express");
 const methodOverride = require("method-override");
-const app = express();
 const controllers = require("./controllers");
 // Creates and handles cookies
 const session = require("express-session");
@@ -8,6 +7,8 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 
 require("dotenv").config();
+
+const app = express();
 
 app.use((req, res, next) => {
   console.log(`METHOD:${req.method} \nOG-URL:${req.originalUrl}`);
@@ -40,6 +41,7 @@ app.use(
 app.use(methodOverride('_method'));
 
 // For routes
+app.use("/", controllers.auth);
 app.use("/menu", controllers.menu);
 app.use("/", controllers.other);
 
