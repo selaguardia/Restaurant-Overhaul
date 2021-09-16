@@ -40,6 +40,14 @@ app.use(
 // For update / delete
 app.use(methodOverride('_method'));
 
+const authRequired = (req,res,next) => {
+  if(!req.session.currentUser){
+    return res.redirect("/login");
+  }
+
+  next();
+}
+
 // For routes
 app.use("/", controllers.auth);
 app.use("/menu", controllers.menu);
