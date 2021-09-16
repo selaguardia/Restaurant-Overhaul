@@ -2,7 +2,7 @@
 <html lang="en">
   <%- include('partials/head.ejs', { page: 'Add Menu Item'}) %>
   <body>
-    <%- include('partials/nav.ejs') %>
+    <%- include('partials/adminNav.ejs') %>
     <div class="container">
       
       <div class="row">
@@ -17,7 +17,7 @@
 
         <div class="col">
           
-          <form action="/menu" method="POST">
+          <form action="/admin/menu" method="POST">
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon1">Name</span>
               <input
@@ -100,10 +100,7 @@
                 </select>
               </div>
             </div>
-            <p>user <%= user %></p>            
-            <p>createdMenuItem._id <%= createdMenuItem %></p>
-            <p>createdMenuItem <%= createdMenuItem._id %></p>
-            <input type="hidden" name="user" value="<%=  %>">
+            <input type="hidden" name="user" value="<%= user %>">
             <button type="submit" class="btn btn-primary mt-3">Submit</button>
           </form>
         </div>

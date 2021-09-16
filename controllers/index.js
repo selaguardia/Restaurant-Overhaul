@@ -1,5 +1,5 @@
 module.exports = {
   menu: require("./menu_controllers"),
-  other: require("./other_controllers"),
+  public: require("./public_controllers"),
   auth: require("./auth_controller"),
 };

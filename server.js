@@ -44,14 +44,13 @@ const authRequired = (req,res,next) => {
   if(!req.session.currentUser){
     return res.redirect("/login");
   }
-
   next();
 };
 
 // For routes
+app.use("/", controllers.public);
 app.use("/", controllers.auth);
-app.use("/menu", controllers.menu);
-app.use("/", controllers.other);
+app.use("/admin", authRequired, controllers.menu);
 
 // 404 page
 app.use("/*", (req, res) => {

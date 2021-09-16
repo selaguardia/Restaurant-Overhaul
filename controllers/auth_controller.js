@@ -79,7 +79,7 @@ router.post("/login", async (req, res) => {
       id: foundUser._id,
     };
     // redirect to menu
-    return res.redirect("/menu");
+    return res.redirect("/admin/menu");
   } catch (error) {
     console.log(error);
     return res.send(error);
@@ -90,7 +90,7 @@ router.post("/login", async (req, res) => {
 router.get("/logout", async (req, res) => {
   try {
     await req.session.destroy();
-    return res.redirect("/login");
+    return res.redirect("/");
   } catch (error) {
     console.log(error);
     return res.send(error);

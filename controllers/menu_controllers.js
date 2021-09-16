@@ -4,11 +4,11 @@ const router = express.Router();
 const db = require("../models");
 
 // Menu GET Route === Refactored to Aysnc/Await & try/catch statement
-router.get("/", async (req, res) => {
+router.get("/menu", async (req, res, next) => {
   try {
     const allMenuItems = await Menu.find({});
     const context = { menuItems: allMenuItems };
-    return res.render("menu", context);
+    return res.render("adminMenu", context);
   } catch (error) {
     console.log(error);
     req.error = error;
@@ -17,30 +17,31 @@ router.get("/", async (req, res) => {
 });
 
 // New Item Form GET Route
-router.get("/new", (req, res) => {
-  const context = {};
+router.get("/menu/new", (req, res) => {
+  const context = {
+    user: req.session.currentUser.id,
+  };
   res.render("new", context);
 });
 
 // Create Item POST Route === Refactored to Aysnc/Await & try/catch statement
-router.post("/", async (req, res, next) => {
+router.post("/menu", async (req, res, next) => {
   try {
-
     const createdMenuItem = await Menu.create(req.body); // if not used to redirect below then you can ommit assigning it to the const.
-    // console.log("REQ.BODY===>", req.body); // Good for debugging
-    return res.redirect(`/menu/${createdMenuItem.id}`); // can redirect to menu/${createdMenuItem.id}
+    return res.redirect(`/admin/menu/${createdMenuItem.id}`); // can redirect to menu/${createdMenuItem.id}
   } catch (error) {
+    console.log(error)
     const context = { error };
     return res.render("new", context);
   }
 });
 
 // MenuItem GET Show Route === Refactored to Aysnc/Await & try/catch statement
-router.get("/:id", async (req, res, next) => {
+router.get("/menu/:id", async (req, res, next) => {
   try {
     const foundMenuItem = await Menu.findById(req.params.id);
     const context = { menuItem: foundMenuItem };
-    return res.render("show", context);
+    return res.render("menuItemShow", context);
   } catch (error) {
     console.log(error);
     req.error = error;
@@ -49,7 +50,7 @@ router.get("/:id", async (req, res, next) => {
 });
 
 // Edit GET Route === Refactored to Aysnc/Await & try/catch statement
-router.get("/:id/edit", async (req, res, next) => {
+router.get("/menu/:id/edit", async (req, res, next) => {
   try {
     const foundMenuItem = await Menu.findById(req.params.id);
     const context = { menuItem: foundMenuItem };
@@ -61,7 +62,7 @@ router.get("/:id/edit", async (req, res, next) => {
 });
 
 // Update POST Route === Refactored to Aysnc/Await & try/catch statement
-router.put("/:id", async (req, res, next) => {
+router.put("/menu/:id", async (req, res, next) => {
   try {
     const updatedMenuItem = await Menu.findByIdAndUpdate(
       req.params.id,
@@ -82,7 +83,7 @@ router.put("/:id", async (req, res, next) => {
 });
 
 // Delete Route === Refactored to Aysnc/Await & try/catch statement
-router.delete("/:id", async (req, res, next) => {
+router.delete("/menu/:id", async (req, res, next) => {
   try {
     await Menu.findByIdAndDelete(req.params.id);
     return res.redirect("/menu");
