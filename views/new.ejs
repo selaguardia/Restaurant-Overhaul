@@ -24,7 +24,7 @@
                 name="dishName"
                 id="dishName"
                 type="text"
-                class="form-control"
+                class="form-control input"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
               />
@@ -35,7 +35,7 @@
               <textarea
                 name="description"
                 id="description"
-                class="form-control"
+                class="form-control input"
                 aria-label="With textarea"
                 type="text"
               ></textarea>
@@ -49,7 +49,7 @@
                   name="lunchPrice"
                   id="lunchPrice"
                   type="number"
-                  class="form-control"
+                  class="form-control input"
                   aria-label="Amount (to the nearest dollar)"
                 />
               </div>
@@ -61,7 +61,7 @@
                   name="dinnerPrice"
                   id="dinnerPrice"
                   type="number"
-                  class="form-control"
+                  class="form-control input"
                   aria-label="Amount (to the nearest dollar)"
                 />
               </div>
@@ -75,7 +75,7 @@
                 name="foodPhoto"
                 id="foodPhoto"
                 type="text"
-                class="form-control"
+                class="form-control input"
                 aria-describedby="basic-addon3"
               />
             </div>
@@ -84,7 +84,7 @@
               <div class="form-floating">
                 <select
                   name="category"
-                  class="form-select form-control"
+                  class="form-select form-control input"
                   id="floatingSelectGrid"
                   aria-label="Floating label select example"
                 >
@@ -100,6 +100,10 @@
                 </select>
               </div>
             </div>
+            <p>user <%= user %></p>            
+            <p>createdMenuItem._id <%= createdMenuItem %></p>
+            <p>createdMenuItem <%= createdMenuItem._id %></p>
+            <input type="hidden" name="user" value="<%=  %>">
             <button type="submit" class="btn btn-primary mt-3">Submit</button>
           </form>
         </div>

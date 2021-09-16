@@ -18,14 +18,17 @@ router.get("/", async (req, res) => {
 
 // New Item Form GET Route
 router.get("/new", (req, res) => {
-  res.render("new");
+  const context = {};
+  res.render("new", context);
 });
 
 // Create Item POST Route === Refactored to Aysnc/Await & try/catch statement
 router.post("/", async (req, res, next) => {
   try {
+
     const createdMenuItem = await Menu.create(req.body); // if not used to redirect below then you can ommit assigning it to the const.
-    return res.redirect(`/menu`); // can redirect to menu/${createdMenuItem.id}
+    // console.log("REQ.BODY===>", req.body); // Good for debugging
+    return res.redirect(`/menu/${createdMenuItem.id}`); // can redirect to menu/${createdMenuItem.id}
   } catch (error) {
     const context = { error };
     return res.render("new", context);

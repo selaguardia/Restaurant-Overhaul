@@ -46,7 +46,7 @@ const authRequired = (req,res,next) => {
   }
 
   next();
-}
+};
 
 // For routes
 app.use("/", controllers.auth);
