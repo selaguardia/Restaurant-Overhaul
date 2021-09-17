@@ -3,7 +3,7 @@
 }
 
 
-#signInbg, #registerBg, {
+#signInbg, #registerBg {
   background-image: url(../images/food_bg.jpg) ;
   background-position: center;
   background-position-x: right;

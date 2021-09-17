@@ -42,6 +42,9 @@
 ✏️ ERD:
 ![ERD](/planning/erd.jpeg)
 
+✏️ RESTful Routes:
+![Routes](/planning/RESTFULroutes.png)
+
 💎 Milestones:
 - 9/7/21 ⇒ Create boilerplate and get the server running
 - 9/9/21 ⇒ Models / Views
