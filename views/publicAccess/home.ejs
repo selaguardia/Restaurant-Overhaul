@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('../partials/head.ejs', { page: 'Home'}) %>
-  <body>
+  <body class="bg-danger">
     <%- include('../partials/nav.ejs') %>
     
     
-    <div class="container"> 
-      <div class="row">
+    <div class="container-fluid"> 
 
+      <div class="row">
         <div class="col">
           <!-- Homepage carousel -->
           <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -29,49 +29,48 @@
             </button>
           </div>
         </div>
-
       </div>
 
       <div class="row">
-        <div class="card-group mt-3">
-
+        <div class="card-group mt-3 text-center">
           <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
             <div class="card text-white bg-success m-1">
-              <div class="card-header">Header</div>
+              <div class="card-header">Homemade Pasta</div>
               <div class="card-body">
-                <h5 class="card-title">Success card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title">Made Daily</h5>
+                
               </div>
+              <img src="https://02f0a56ef46d93f03c90-22ac5f107621879d5667e0d7ed595bdb.ssl.cf2.rackcdn.com/sites/17971/photos/798458/Pasta1_960x960_circle.png" class="card-img-bottom" alt="...">
             </div>
           </div>
   
           <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
             <div class="card text-white bg-success m-1">
-              <div class="card-header">Header</div>
+              <div class="card-header">New Dish Alert!</div>
               <div class="card-body">
-                <h5 class="card-title">Success card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title">Veal Piccatta</h5>
               </div>
+              <img src="https://02f0a56ef46d93f03c90-22ac5f107621879d5667e0d7ed595bdb.ssl.cf2.rackcdn.com/sites/17971/photos/794572/Veal_Piccatta_960x960_circle.png" class="card-img-bottom" alt="...">
             </div>
           </div>
   
           <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
             <div class="card text-white bg-success m-1">
-              <div class="card-header">Header</div>
+              <div class="card-header">Party with us!</div>
               <div class="card-body">
-                <h5 class="card-title">Success card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title">Banquets Available</h5>
               </div>
+              <img src="https://s3-media0.fl.yelpcdn.com/bphoto/7zCl8pD5RUwu83rmbvxfig/o.jpg" class="card-img-bottom rounded-circle" id="banquetImg" alt="...">
             </div>
           </div>
   
           <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
             <div class="card text-white bg-success m-1">
-              <div class="card-header">Header</div>
+              <div class="card-header">New Dish Alert!</div>
               <div class="card-body">
-                <h5 class="card-title">Success card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title">Veal Parmesan</h5>
               </div>
+              <img src="https://02f0a56ef46d93f03c90-22ac5f107621879d5667e0d7ed595bdb.ssl.cf2.rackcdn.com/sites/17971/photos/794570/Veal_Parmesan_960x960_circle.png" class="card-img-bottom" alt="...">
             </div>
           </div>
         </div>
@@ -81,19 +80,5 @@
 
     </div>
     
-
-
-
-
-
-
-
-    
-
-
-          
-
-
-
   </body>
 </html>

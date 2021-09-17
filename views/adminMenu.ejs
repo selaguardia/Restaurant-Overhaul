@@ -12,26 +12,26 @@
         </div>
       </div>
       <div class="row d-flex justify-content-center mb-1">
-        <div class="col col-lg-6">
+        <div class="col col-lg-8">
           <div class="row">
             <div class="col d-flex justify-content-end">
-              <p class="bg-info rounded mx-5">Lunch</p>
-              <p class="bg-success rounded">Dinner</p>
+              <p class="bg-success text-white py-1 px-2 rounded mx-5">Lunch</p>
+              <p class="bg-danger text-white py-1 px-2 rounded">Dinner</p>
             </div>
           </div>
         </div>
       </div>
       
-      <% for(let idx = 0; idx < menuItems.length; idx++){ %> <% const menuItem =
+      <% for(let idx = menuItems.length -1; idx >= 0; idx--){ %> <% const menuItem =
         menuItems[idx] %>
         <div class="row d-flex justify-content-center mb-1">
-          <div class="col col-lg-6">
+          <div class="col col-lg-8">
           <div class="card shadow">
             <div class="card-header d-flex justify-content-between">
-              <p><a href="/admin/menu/<%= menuItem.id %>"><%= menuItem.dishName %></a></p>
+              <p id="menuDishName"><a class="text-decoration-none" href="/admin/menu/<%= menuItem.id %>"><%= menuItem.dishName %></a></p>
               
-              <p class="px-3 bg-info rounded">$<%= menuItem.lunchPrice %></p>
-              <p class="px-3 bg-success rounded">$<%= menuItem.dinnerPrice %></p>
+              <p class="py-1 px-2 bg-success rounded text-white">$<%= menuItem.lunchPrice %></p>
+              <p class="py-1 px-2 bg-danger rounded text-white">$<%= menuItem.dinnerPrice %></p>
             </div>
             <div class="card-body" >
               <p class="card-text">

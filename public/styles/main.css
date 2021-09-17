@@ -1,0 +1,20 @@
+#menuDishNameAnchor {
+  color: green;
+}
+
+#signInbg, #registerBg {
+  background-image: url(../images/food_bg.jpg) ;
+  background-position: center;
+  background-position-x: right;
+  height: 100vh;
+}
+
+#signInForm {
+  background-color: antiquewhite;
+  padding: 50px 25px;
+  border-radius: 10px;
+}
+
+li:hover{
+  transform: scale(1.1);
+}

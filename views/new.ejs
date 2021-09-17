@@ -17,7 +17,7 @@
 
         <div class="col">
           
-          <form action="/admin/menu" method="POST">
+          <form action="/admin/menu" method="POST" class="bg-success p-5 rounded">
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon1">Name</span>
               <input
@@ -27,6 +27,7 @@
                 class="form-control input"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
+                required
               />
             </div>
 
@@ -38,11 +39,12 @@
                 class="form-control input"
                 aria-label="With textarea"
                 type="text"
+                required
               ></textarea>
             </div>
 
             <div class="d-flex">
-              <label for="lunchPrice" class="form-label p-2">Lunch Price</label>
+              <label for="lunchPrice" class="form-label p-2 text-white">Lunch Price</label>
               <div class="input-group mb-3">
                 <span class="input-group-text">$</span>
                 <input
@@ -50,11 +52,12 @@
                   id="lunchPrice"
                   type="number"
                   class="form-control input"
-                  aria-label="Amount (to the nearest dollar)"
+                  aria-label="Please Enter Lunch Price"
+                  required
                 />
               </div>
     
-              <label for="dinnerPrice" class="form-label p-2">Dinner Price</label>
+              <label for="dinnerPrice" class="form-label p-2 text-white">Dinner Price</label>
               <div class="input-group mb-3">
                 <span class="input-group-text">$</span>
                 <input
@@ -63,6 +66,7 @@
                   type="number"
                   class="form-control input"
                   aria-label="Amount (to the nearest dollar)"
+                  required
                 />
               </div>
             </div>
@@ -77,6 +81,7 @@
                 type="text"
                 class="form-control input"
                 aria-describedby="basic-addon3"
+                required
               />
             </div>
   

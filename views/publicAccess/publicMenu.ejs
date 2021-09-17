@@ -7,19 +7,17 @@
     <div class="container">
 
       <div class="row">
-
-        <div class="col-11">
-          <h1 class="display-4 text-center">
+        <div class="col">
+          <h1 class="display-4 text-center py-3">
             <i>Chef's Speciale della Settimana</i>
           </h1>
         </div>
-
       </div>
-    </div>
 
-    <div class="container">
+
+
       <div class="row">
-
+  
         <div class="col">
           <div class="card shadow" >
             <img
@@ -29,13 +27,12 @@
             />
             <div class="card-body">
               <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                Bistechina alla Griglia
               </p>
             </div>
           </div>
         </div>
-
+  
         <div class="col">
           <div class="card shadow" >
             <img
@@ -45,13 +42,12 @@
             />
             <div class="card-body">
               <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                Pizza Margherita
               </p>
             </div>
           </div>
         </div>
-
+  
         <div class="col">
           <div class="card shadow" >
             <img
@@ -61,13 +57,12 @@
             />
             <div class="card-body">
               <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                Fresh Baked Bread
               </p>
             </div>
           </div>
         </div>
-
+  
         <div class="col">
           <div class="card shadow" >
             <img
@@ -77,13 +72,52 @@
             />
             <div class="card-body">
               <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                Turtei di Zucca
               </p>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col d-flex justify-content-center">
+          <p class="display-6 my-5">Full Menu</p>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center mb-1">
+        <div class="col col-lg-8">
+          <div class="row">
+            <div class="col d-flex justify-content-end">
+              <p class="bg-success text-white py-1 px-2 rounded mx-5">Lunch</p>
+              <p class="bg-danger text-white py-1 px-2 rounded">Dinner</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <% for(let idx = menuItems.length -1; idx >= 0; idx--){ %> <% const menuItem =
+        menuItems[idx] %>
+        <div class="row d-flex justify-content-center mb-1">
+          <div class="col col-lg-8">
+          <div class="card shadow">
+            <div class="card-header d-flex justify-content-between">
+              <p id="menuDishName"><a class="text-decoration-none" href="/menu/<%= menuItem.id %>"><%= menuItem.dishName %></a></p>
+              
+              <p class="py-1 px-2 bg-success rounded text-white">$<%= menuItem.lunchPrice %></p>
+              <p class="py-1 px-2 bg-danger rounded text-white">$<%= menuItem.dinnerPrice %></p>
+            </div>
+            <div class="card-body" >
+              <p class="card-text">
+                <%= menuItem.description %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+
+
+
     </div>
   </body>
 </html>

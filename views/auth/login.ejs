@@ -2,28 +2,23 @@
 <html lang="en">
   <%- include('../partials/head.ejs', { page: 'Login'}) %>
 
-  <body class="text-center">
+  <body class="text-center" id="signInbg">
     <div class="container">
       <div class="row">
-        <div class="col-5">
-          <main class="form-signin">
-            <form action="/login" method="POST">
-              <img
-                class="mb-4"
-                src="../assets/brand/bootstrap-logo.svg"
-                alt=""
-                width="72"
-                height="57"
-              />
+        <div class="col-2"></div>
+        <div class="col">
+          <main class="form-signin py-3 mt-5">
+            <form id="signInForm" action="/login" method="POST">
               <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
       
               <div class="form-floating">
                 <input
                   name="email"
                   type="email"
-                  class="form-control"
+                  class="form-control my-3"
                   id="email"
                   placeholder="name@example.com"
+                  required
                 />
                 <label for="email">Email address</label>
               </div>
@@ -31,26 +26,27 @@
                 <input
                   name="password"
                   type="password"
-                  class="form-control"
+                  class="form-control my-3"
                   id="password"
                   placeholder="Password"
+                  required
                 />
                 <label for="password">Password</label>
               </div>
       
               <div class="checkbox mb-3">
                 <label>
-                  <input type="checkbox" value="remember-me" /> Remember me
+                  <input class=" my-3" type="checkbox" value="remember-me" /> Remember me
                 </label>
               </div>
-              <button class="w-100 btn btn-lg btn-primary" type="submit">
+              <button class="w-100 btn btn-lg btn-primary  my-3" type="submit">
                 Sign in
               </button>
               <a href="/register">Dont have an account?</a>
             </form>
           </main>
-
         </div>
+        <div class="col-2"></div>
       </div>
     </div>
   </body>
