@@ -18,7 +18,7 @@
   
           <div class="col">
             
-            <form action="/menu" method="POST">
+            <form action="/admin/menu/<%= menuItem.id %>?_method=PUT" method="POST">
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Name</span>
                 <input
@@ -28,17 +28,19 @@
                   class="form-control"
                   aria-label="Username"
                   aria-describedby="basic-addon1"
+                  value="<%= menuItem.dishName %>"
                 />
               </div>
   
               <div class="input-group mb-3">
                 <span class="input-group-text">Description:</span>
                 <textarea
-                  name="descripton"
+                  name="description"
                   id="description"
                   class="form-control"
                   aria-label="With textarea"
-                ></textarea>
+                  type="text"
+                ><%= menuItem.description %></textarea>
               </div>
   
               <div class="d-flex">
@@ -51,6 +53,7 @@
                     type="text"
                     class="form-control"
                     aria-label="Amount (to the nearest dollar)"
+                    value="<%= menuItem.lunchPrice %>"
                   />
                 </div>
       
@@ -63,6 +66,7 @@
                     type="text"
                     class="form-control"
                     aria-label="Amount (to the nearest dollar)"
+                    value="<%= menuItem.dinnerPrice %>"
                   />
                 </div>
               </div>
@@ -77,29 +81,11 @@
                   type="text"
                   class="form-control"
                   aria-describedby="basic-addon3"
+                  value="<%= menuItem.foodPhoto %>"
                 />
               </div>
     
-              <div class="col-md">
-                <div class="form-floating">
-                  <select
-                    name="category"
-                    class="form-select"
-                    id="floatingSelectGrid"
-                    aria-label="Floating label select example"
-                  >
-                    <option selected>Food Category</option>
-                    <option value="1">Appetizers</option>
-                    <option value="2">Soup & Salad</option>
-                    <option value="3">Pasta</option>
-                    <option value="4">Sandwiches</option>
-                    <option value="5">Meat & Poultry</option>
-                    <option value="6">Pizza</option>
-                    <option value="7">Seafood</option>
-                    <option value="8">Dessert</option>
-                  </select>
-                </div>
-              </div>
+              
               
               <button type="submit" class="btn btn-primary mt-3">Update</button>
             </form>

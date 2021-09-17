@@ -75,7 +75,7 @@ router.put("/menu/:id", async (req, res, next) => {
         new: true,
       },
     );
-    return res.redirect(`/menu/${updatedMenuItem.id}`);
+    return res.redirect(`/admin/menu/${updatedMenuItem.id}`);
   } catch (error) {
     const context = { error };
     return next();
@@ -86,7 +86,7 @@ router.put("/menu/:id", async (req, res, next) => {
 router.delete("/menu/:id", async (req, res, next) => {
   try {
     await Menu.findByIdAndDelete(req.params.id);
-    return res.redirect("/menu");
+    return res.redirect("/admin/menu");
   } catch (error) {
     console.log(error);
     req.error = error;
