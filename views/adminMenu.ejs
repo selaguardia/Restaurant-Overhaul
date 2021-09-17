@@ -29,9 +29,10 @@
           <div class="card shadow">
             <div class="card-header d-flex justify-content-between">
               <p id="menuDishName"><a class="text-decoration-none" href="/admin/menu/<%= menuItem.id %>"><%= menuItem.dishName %></a></p>
-              
-              <p class="py-1 px-2 bg-success rounded text-white">$<%= menuItem.lunchPrice %></p>
-              <p class="py-1 px-2 bg-danger rounded text-white">$<%= menuItem.dinnerPrice %></p>
+              <div class="d-flex justify-content-end">
+                <p class="py-1 px-2 mx-3 bg-success rounded text-white">$<%= menuItem.lunchPrice %></p>
+                <p class="py-1 px-2 mx-3 bg-danger rounded text-white">$<%= menuItem.dinnerPrice %></p>
+              </div>
             </div>
             <div class="card-body" >
               <p class="card-text">
