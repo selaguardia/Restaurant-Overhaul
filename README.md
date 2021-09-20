@@ -1,6 +1,6 @@
 🖥 Link to hosted app: 
 
-  https://www.heroku.com
+  https://restaurant-overhaul.herokuapp.com/
 
 ✏️ Description:
 
