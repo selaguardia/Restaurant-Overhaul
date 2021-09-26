@@ -4,76 +4,65 @@
   <body>
     <%- include('../partials/nav.ejs') %>
 
-    <div class="container">
-
+    <div class="container-fluid">
       <div class="row">
         <div class="col">
-          <h1 class="display-4 text-center py-5">
+          <h1 class="display-4 text-center py-3">
             <i>Chef's Speciale della Settimana</i>
           </h1>
         </div>
       </div>
 
-
-
-      <div class="row">
-  
-        <div class="col">
-          <div class="card shadow" >
+      <div class="row gy-2">
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <div class="card shadow">
             <img
               src="https://s3-media0.fl.yelpcdn.com/bphoto/dozRbBpphuDNoAfpNA_dqQ/o.jpg"
-              class="card-img-top"
+              class="card-img-top specialsCardImg"
               alt="..."
             />
             <div class="card-body">
-              <p class="card-text">
-                Bistechina alla Griglia
-              </p>
+              <p class="card-text">Bistechina alla Griglia</p>
             </div>
           </div>
         </div>
-  
-        <div class="col">
-          <div class="card shadow" >
+      
+
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <div class="card shadow">
             <img
               src="https://s3-media0.fl.yelpcdn.com/bphoto/oeqZFzBp7SRq5fxFAyylDg/o.jpg"
-              class="card-img-top"
+              class="card-img-top specialsCardImg"
               alt="..."
             />
             <div class="card-body">
-              <p class="card-text">
-                Pizza Margherita
-              </p>
+              <p class="card-text">Pizza Margherita</p>
             </div>
           </div>
         </div>
-  
-        <div class="col">
-          <div class="card shadow" >
+
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <div class="card shadow">
             <img
               src="https://s3-media0.fl.yelpcdn.com/bphoto/SEbwqKZ2af8vFfzebNx2yA/o.jpg"
-              class="card-img-top"
+              class="card-img-top specialsCardImg"
               alt="..."
             />
             <div class="card-body">
-              <p class="card-text">
-                Fresh Baked Bread
-              </p>
+              <p class="card-text">Fresh Baked Bread</p>
             </div>
           </div>
         </div>
-  
-        <div class="col">
-          <div class="card shadow" >
+
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <div class="card shadow">
             <img
               src="https://s3-media0.fl.yelpcdn.com/bphoto/ClpCM6hsfLUT9vqXi2_hjw/o.jpg"
-              class="card-img-top"
+              class="card-img-top specialsCardImg"
               alt="..."
             />
             <div class="card-body">
-              <p class="card-text">
-                Turtei di Zucca
-              </p>
+              <p class="card-text">Turtei di Zucca</p>
             </div>
           </div>
         </div>
@@ -84,8 +73,9 @@
           <p class="display-6 my-5">Full Menu</p>
         </div>
       </div>
-      <div class="row d-flex justify-content-center mb-1">
-        <div class="col col-lg-8">
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-12 col-lg-10 col-xl-8">
           <div class="row">
             <div class="col d-flex justify-content-end">
               <p class="bg-success text-white py-1 px-2 rounded mx-5">Lunch</p>
@@ -94,31 +84,70 @@
           </div>
         </div>
       </div>
-      
-      <% for(let idx = menuItems.length -1; idx >= 0; idx--){ %> <% const menuItem =
-        menuItems[idx] %>
-        <div class="row d-flex justify-content-center mb-1">
-          <div class="col col-lg-8">
+
+
+  
+
+      <% for(let idx = menuItems.length -1; idx >= 0; idx--){ %> <% const
+      menuItem = menuItems[idx] %>
+      <div class="row d-flex justify-content-center mb-2">
+        <div class="col-md-12 col-lg-10 col-xl-8">
           <div class="card shadow">
             <div class="card-header d-flex justify-content-between">
-              <p id="menuDishName"><a class="text-decoration-none" href="/menu/<%= menuItem.id %>"><%= menuItem.dishName %></a></p>
-              
-              <div class="d-flex justify-content-end">
-                <p class="py-1 px-2 mx-3 bg-success rounded text-white">$<%= menuItem.lunchPrice %></p>
-                <p class="py-1 px-2 mx-3 bg-danger rounded text-white">$<%= menuItem.dinnerPrice %></p>
-              </div>            </div>
-            <div class="card-body" >
-              <p class="card-text">
-                <%= menuItem.description %>
+              <p id="menuDishName">
+                <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <%= menuItem.dishName %>
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel"><%= menuItem.dishName %></h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="card shadow">
+                            <img
+                              src="<%= menuItem.foodPhoto %>"
+                              class="card-img-top specialsCardImg"
+                              alt="..."
+                            />
+                            <div class="card-body">
+                              <p class="card-text"><%= menuItem.description %></p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-around">
+                          <button type="button" class="btn btn-success" > Lunch $<%= menuItem.lunchPrice %></button>
+                          <button type="button" class="btn btn-danger">Dinner $<%= menuItem.dinnerPrice %></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
               </p>
+
+              <div class="d-flex justify-content-end">
+                <p class="bg-success text-white py-1 px-2 rounded mx-5 text-white">
+                  $<%= menuItem.lunchPrice %>
+                </p>
+                <p class="bg-danger text-white py-1 px-2 rounded text-white">
+                  $<%= menuItem.dinnerPrice %>
+                </p>
+              </div>
+              
+            </div>
+
+            <div class="card-body">
+              <p class="card-text"><%= menuItem.description %></p>
             </div>
           </div>
         </div>
       </div>
       <% } %>
-
-
-
     </div>
   </body>
 </html>

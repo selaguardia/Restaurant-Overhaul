@@ -25,6 +25,11 @@
 
 👨🏽‍💻 Installation Steps:
 
+Step 1: Fork this repo
+Step 2: Clone this repo inside a local folder on your machine
+Step 3: Run "npm i" on terminal to install all the dependencies
+Step 4: Run nodemon -- Browser should open at this point
+
 ✏️ User Stories:
 
 - User lands on a webpage and sees the landing page

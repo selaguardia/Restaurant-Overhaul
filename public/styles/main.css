@@ -20,3 +20,31 @@ li:hover{
   transform: scale(1.1);
 }
 
+.specialsCardImg, .homeAnnouncemenCardsImg {
+  float: left;
+  width:  100%;
+  height: 300px;
+  object-fit: cover;
+
+}
+
+body {
+  background-color: #D3D3D3;
+}
+
+.card {
+  border: none;
+}
+
+.fa-yelp {
+  color: #C41200;
+  font-size:3rem;
+}
+
+.fa-facebook {
+  font-size:3rem;
+}
+
+.fa-yelp:hover, .fa-facebook:hover {
+  transform: scale(1.4);
+}
