@@ -1,30 +1,61 @@
-<!-- navbar -->
-<nav class="navbar navbar-expand-md navbar-light bg-danger">
+ <!-- Navbar -->
+ <nav class="navbar navbar-expand-xxl navbar-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">
-      <span class="fw-bold text-white">Buon Appetito</span>
-    </a>
+    <p class="navbar-brand">Buon Appetito</p>
 
-    <!-- toggle button for mobile nav -->
-    <button class="navbar-toggler" id="testButton" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navmenu"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- navbar links -->
-      <div class="collapse navbar-collapse justify-content-end" id="main-nav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link text-white" href="/admin/menu">Admin Menu</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="/admin/menu/new"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
-              <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
-            </svg></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="/logout">Logout</a>
-          </li>
-        </ul>
-      </div>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto text-center">
+       
+        <li class="nav-item navbar-text px-2">
+          <a href="/" class="nav-link ">
+            <i class="fas fa-wrench"></i> Public View</a
+          >
+        </li>
+        <li class="nav-item navbar-text px-2">
+          <a  class="nav-link">
+            <i class="fas fa-wrench"></i> Edit Home</a
+          >
+        </li>
+        <li class="nav-item navbar-text px-2">
+          <a class="nav-link">
+            <i class="fas fa-user-friends"></i> Edit About US</a
+          >
+        </li>
+        <li class="nav-item navbar-text px-2">
+          <a href="/admin/menu" class="nav-link">
+            <i class="fas fa-pizza-slice"></i> Edit Menu</a
+          >
+        </li>
+        <li class="nav-item navbar-text px-2">
+          <a class="nav-link">
+            <i class="fas fa-cocktail"></i> Edit Banuets</a
+          >
+        </li>
+        <li class="nav-item navbar-text px-2">
+          <a  class="nav-link">
+            <i class="fas fa-phone"></i> Edit Contact Us</a
+          >
+        </li>
+        <li class="nav-item navbar-text px-2">
+          <a href="/admin/menu/new" class="nav-link">
+            <i class="fas fa-wrench"></i> Add New Menu Item</a
+          >
+        </li>
+        <li class="nav-item navbar-text px-2">
+          <a href="/logout" class="nav-link">
+            <i class="fas fa-sign-out-alt"></i> Logout</a
+          >
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
