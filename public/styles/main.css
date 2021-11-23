@@ -2,8 +2,12 @@
 #menuDishNameAnchor {
   color: green;
 }
-
-
+#about, #banquets, #contact {
+  background-image: url(../images/UnderConstruction.png) ;
+  background-position: center;
+  background-position-x: right;
+  height: 100vh;
+}
 #signInbg, #registerBg {
   background-image: url(../images/food_bg.jpg) ;
   background-position: center;
@@ -18,7 +22,8 @@
 }
 
 li:hover{
-  transform: scale(1.1);
+  transform: scale(1.4);
+  padding: 0 auto;
 }
 
 .specialsCardImg, .homeAnnouncemenCardsImg {

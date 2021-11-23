@@ -17,7 +17,7 @@
                   type="email"
                   class="form-control my-3"
                   id="email"
-                  placeholder="name@example.com"
+                  value="user@test.com"
                   required
                 />
                 <label for="email">Email address</label>
@@ -28,16 +28,20 @@
                   type="password"
                   class="form-control my-3"
                   id="password"
-                  placeholder="Password"
+                  value="password123"
                   required
                 />
                 <label for="password">Password</label>
               </div>
       
               <div class="checkbox mb-3">
+                <div class="d-flex" style="color:red;">
+                  <p>***NOTE: Login is pre-filled. Click 'Sign In' to enter.</p>
+                </div>
                 <label>
                   <input class=" my-3" type="checkbox" value="remember-me" /> Remember me
                 </label>
+                
               </div>
               <button class="w-100 btn btn-lg btn-primary  my-3" type="submit">
                 Sign in
