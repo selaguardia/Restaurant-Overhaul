@@ -21,10 +21,7 @@
   border-radius: 10px;
 }
 
-li:hover{
-  transform: scale(1.4);
-  padding: 0 auto;
-}
+
 
 .specialsCardImg, .homeAnnouncemenCardsImg {
   float: left;
@@ -55,10 +52,10 @@ body {
   transform: scale(1.4);
 }
 
-.landing {
+.landingRow {
   background-image: url('../images/food/wine.jpg');
   position: relative;
   background-size: cover;
   background-position: left;
-  min-height: 70vh;
+  min-height: 95vh;
 }
