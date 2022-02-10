@@ -54,3 +54,11 @@ body {
 .fa-yelp:hover, .fa-facebook:hover {
   transform: scale(1.4);
 }
+
+.landing {
+  background-image: url('../images/food/wine.jpg');
+  position: relative;
+  background-size: cover;
+  background-position: left;
+  min-height: 70vh;
+}
