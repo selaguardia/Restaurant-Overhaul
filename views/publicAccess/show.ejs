@@ -4,39 +4,61 @@
   <body>
     <%- include('../partials/nav.ejs') %>
     <div class="container">
-      <div class="row">
-        <div class="col d-flex justify-content-center">
-          <p class="display-6"><%= menuItem.dishName %></p>
-        </div>
-      </div>
-      
-      
-      <div class="card mb-3" >
-        <form
-          action="/admin/menu/<%= menuItem.id %>?_method=DELETE"
-          method="POST"
-        >
-          <div class="row g-0">
-            <div class="col-md-4">
+      <section class="py-5">
+        <div class="container px-4 px-lg-5 my-5">
+          <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6">
               <img
+                class="card-img-top mb-5 mb-md-0"
                 src="<%= menuItem.foodPhoto %>"
-                class="img-fluid rounded-start"
-                style="width: auto; min-height: 100%"
                 alt="..."
               />
             </div>
-            <div class="col-md-8 bg-success">
-              <div class="card-body text-white">
-                <h5 class="card-title"><%= menuItem.dishName %></h5>
-                <p class="card-text"><%= menuItem.description %></p>
-                
+            <div class="col-md-6">
+              <h1 class="display-5 fw-bolder"><%= menuItem.dishName %></h1>
+              <div class="fs-5 mb-5">
+                <span>Lunch $<%= menuItem.lunchPrice %></span><br>
+                <span>Dinner $<%= menuItem.dinnerPrice %></span>
+              </div>
+              <p><strong>Description:</strong></p>
+              <p class="lead">
+                <%= menuItem.description %>
+              </p>
+              <div class="d-flex">
+                <input
+                  class="form-control text-center me-3"
+                  id="inputQuantity"
+                  type="num"
+                  value="1"
+                  style="max-width: 3rem"
+                />
+                <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                  <i class="bi-cart-fill me-1"></i>
+                  Add to cart
+                </button>
+                <!-- Edit Button -->
+                <div>
+                  <a
+                    href="/admin/menu/<%= menuItem.id %>/edit"
+                    class="btn btn-outline-dark flex-shrink-0 mx-3"
+                    >Edit</a
+                  >
+                </div>
+                <!-- Delete button -->
+                <form
+                  action="/admin/menu/<%= menuItem.id %>?_method=DELETE"
+                  method="POST"
+                >
+                  <input
+                    class="btn btn-outline-dark flex-shrink-0"
+                    type="submit"
+                    value="Delete"
+                  />
+                </form>
               </div>
             </div>
-          </div>
         </div>
-      </form>
-    </div>
-
-
+      </div>
+    </section>
   </body>
 </html>
