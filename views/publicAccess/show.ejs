@@ -34,27 +34,8 @@
                 />
                 <button class="btn btn-outline-dark flex-shrink-0" type="button">
                   <i class="bi-cart-fill me-1"></i>
-                  Add to cart
+                  Order Online
                 </button>
-                <!-- Edit Button -->
-                <div>
-                  <a
-                    href="/admin/menu/<%= menuItem.id %>/edit"
-                    class="btn btn-outline-dark flex-shrink-0 mx-3"
-                    >Edit</a
-                  >
-                </div>
-                <!-- Delete button -->
-                <form
-                  action="/admin/menu/<%= menuItem.id %>?_method=DELETE"
-                  method="POST"
-                >
-                  <input
-                    class="btn btn-outline-dark flex-shrink-0"
-                    type="submit"
-                    value="Delete"
-                  />
-                </form>
               </div>
             </div>
         </div>
