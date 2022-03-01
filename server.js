@@ -9,6 +9,7 @@ const MongoStore = require("connect-mongo");
 require("dotenv").config();
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 app.use((req, res, next) => {
   console.log(`METHOD:${req.method} \nOG-URL:${req.originalUrl}`);
@@ -61,7 +62,7 @@ app.use("/*", (req, res) => {
 // app.listen(PORT, (req, res) => {
 //   console.log(`✅ Listening for client requests on Port ${PORT} ✅`);
 // });
-const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
-  console.log(`Our app is running on port ${PORT}`);
+  console.log(`✅ Listening for client requests on Port ${PORT} ✅`);
 });

@@ -21,10 +21,7 @@
   border-radius: 10px;
 }
 
-li:hover{
-  transform: scale(1.4);
-  padding: 0 auto;
-}
+
 
 .specialsCardImg, .homeAnnouncemenCardsImg {
   float: left;
@@ -53,4 +50,12 @@ body {
 
 .fa-yelp:hover, .fa-facebook:hover {
   transform: scale(1.4);
+}
+
+.landingRow {
+  background-image: url('../images/food/wine.jpg');
+  position: relative;
+  background-size: cover;
+  background-position: left;
+  min-height: 95vh;
 }

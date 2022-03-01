@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const MenuSchema = new Schema(
+const menuSchema = new Schema(
   {
     dishName: {
       type: String,
@@ -44,5 +44,5 @@ const MenuSchema = new Schema(
   }
 );
 
-const Menu = mongoose.model('Menu', MenuSchema);
+const Menu = mongoose.model('Menu', menuSchema);
 module.exports = Menu;
