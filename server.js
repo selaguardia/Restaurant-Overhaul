@@ -1,4 +1,5 @@
 const express = require("express");
+const app = express();
 const methodOverride = require("method-override");
 const controllers = require("./controllers");
 // Creates and handles cookies
@@ -8,8 +9,7 @@ const MongoStore = require("connect-mongo");
 
 require("dotenv").config();
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3005;
 
 app.use((req, res, next) => {
   console.log(`METHOD:${req.method} \nOG-URL:${req.originalUrl}`);
@@ -59,9 +59,6 @@ app.use("/*", (req, res) => {
   return res.status(404).render("404", context);
 });
 
-// app.listen(PORT, (req, res) => {
-//   console.log(`✅ Listening for client requests on Port ${PORT} ✅`);
-// });
 
 app.listen(PORT, () => {
   console.log(`✅ Listening for client requests on Port ${PORT} ✅`);
