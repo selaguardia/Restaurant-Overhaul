@@ -41,6 +41,7 @@ app.use(
 // For update / delete
 app.use(methodOverride("_method"));
 
+// Check to see the current user is still valid
 const authRequired = (req, res, next) => {
   if (!req.session.currentUser) {
     return res.redirect("/login");
