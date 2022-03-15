@@ -16,12 +16,12 @@ app.use((req, res, next) => {
   next();
 });
 
-require('./config/db.connections.js')
+require("./config/db.connections.js");
 
 // Middleware
-app.use(express.urlencoded({ extended: false }));   // Body parser
+app.use(express.urlencoded({ extended: false })); // Body parser
 app.set("view engine", "ejs");
-app.use(express.static(__dirname + "/public"));
+app.use(express.static("public"));
 
 // Session Controller
 app.use(
@@ -29,7 +29,7 @@ app.use(
     // this will store the cookies in the mongodb database
     store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
     // secret key will sign the cookie for validation
-    secret: process.env.SECRET,
+    secret: process.env.SECRET_KEY,
     resave: false,
     saveUninitialized: false,
     // cookie config
@@ -39,10 +39,10 @@ app.use(
   })
 );
 // For update / delete
-app.use(methodOverride('_method'));
+app.use(methodOverride("_method"));
 
-const authRequired = (req,res,next) => {
-  if(!req.session.currentUser){
+const authRequired = (req, res, next) => {
+  if (!req.session.currentUser) {
     return res.redirect("/login");
   }
   next();
@@ -58,7 +58,6 @@ app.use("/*", (req, res) => {
   const context = { error: req.error };
   return res.status(404).render("404", context);
 });
-
 
 app.listen(port, () => {
   console.log(`✅ Listening for client requests on Port ${port} ✅`);

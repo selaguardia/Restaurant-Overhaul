@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const hoursSchema = new Schema(
+const HoursSchema = new Schema(
   {
     dayOfWeek: {
       type: String,
@@ -28,5 +28,5 @@ const hoursSchema = new Schema(
   }
 );
 
-const Hours = mongoose.model('Menu', hoursSchema);
+const Hours = mongoose.model('Menu', HoursSchema);
 module.exports = Hours;
