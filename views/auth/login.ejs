@@ -2,56 +2,65 @@
 <html lang="en">
   <%- include('../partials/head.ejs', { page: 'Login'}) %>
 
-  <body class="text-center" id="signInbg">
-    <div class="container">
-      <div class="row">
-        <div class="col-2"></div>
-        <div class="col">
-          <main class="form-signin py-3 mt-5">
-            <form id="signInForm" action="/login" method="POST">
-              <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-      
-              <div class="form-floating">
-                <input
-                  name="email"
-                  type="email"
-                  class="form-control my-3"
-                  id="email"
-                  value="user@test.com"
-                  required
-                />
-                <label for="email">Email address</label>
-              </div>
-              <div class="form-floating">
-                <input
-                  name="password"
-                  type="password"
-                  class="form-control my-3"
-                  id="password"
-                  value="password123"
-                  required
-                />
-                <label for="password">Password</label>
-              </div>
-      
-              <div class="checkbox mb-3">
-                <div class="d-flex" style="color:red;">
-                  <p>***NOTE: Login is pre-filled. Click 'Sign In' to enter.</p>
+  <body>
+
+    <section class="vh-100" style="background-color: #940909;">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col col-xl-10">
+            <div class="card" style="border-radius: 1rem;">
+              <div class="row g-0">
+                <div class="col-md-6 col-lg-5 d-none d-md-block">
+                  <img
+                    src="/images/food/winePour.jpg"
+                    alt="login form"
+                    class="img-fluid" style="border-radius: 1rem 0 0 1rem; height:100%;"
+                  />
                 </div>
-                <label>
-                  <input class=" my-3" type="checkbox" value="remember-me" /> Remember me
-                </label>
-                
+                <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                  <div class="card-body p-4 p-lg-5 text-black">
+    
+                    <form action="/login" method="POST">
+    
+                      <div class="d-flex align-items-center mb-3 pb-1">
+                        <i class="fas fa-cubes fa-2x me-3" style="color: #117a0dab;"></i>
+                        <span class="h1 fw-bold mb-0">Buon Appetito Log-In</span>
+                      </div>
+    
+                      <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your admin account</h5>
+                      <div class="d-flex">
+                        <p class="p-1 rounded" style="background-color:rgb(231, 231, 39);">*NOTE: Login is pre-filled. Click "Login" to enter.</p>
+                      </div>
+    
+                      <div class="form-outline mb-4">
+                        <input type="email" name="email" id="form2Example17" class="form-control form-control-lg" value="user@test.com"
+                        required />
+                        <label class="form-label" for="form2Example17">Email address</label>
+                      </div>
+    
+                      <div class="form-outline mb-4">
+                        <input name="password" type="password" id="form2Example27" class="form-control form-control-lg" value="password123"
+                        required />
+                        <label class="form-label" for="form2Example27">Password</label>
+                      </div>
+    
+                      <div class="pt-1 mb-4">
+                        <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
+                      </div>
+    
+                      <a class="small text-muted" href="#!">Forgot password?</a>
+                      <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="/register" style="color: #393f81;">Register here</a></p>
+                      <a href="#!" class="small text-muted">Terms of use.</a>
+                      <a href="#!" class="small text-muted">Privacy policy</a>
+                    </form>
+    
+                  </div>
+                </div>
               </div>
-              <button class="w-100 btn btn-lg btn-primary  my-3" type="submit">
-                Sign in
-              </button>
-              <a href="/register">Dont have an account?</a>
-            </form>
-          </main>
+            </div>
+          </div>
         </div>
-        <div class="col-2"></div>
       </div>
-    </div>
+    </section>
   </body>
 </html>

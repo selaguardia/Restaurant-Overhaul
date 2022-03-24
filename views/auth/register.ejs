@@ -2,123 +2,73 @@
 <html lang="en">
   <%- include('../partials/head.ejs', { page: 'Register'}) %>
 <body>
-  <section id="registerBg">
-    <div class="container">
-      <div class="row  d-flex justify-content-center align-items-center">
-        
-        <div class="col-xl-5 col-sm-4 mt-3">
-          <div class="card text-white">
-            <div class="card-body p-md-2 bg-success rounded">
-              <div class="row justify-content-center">
-                <div class="col">
-                  <p class="text-center h4 display-6 mb-4 mx-1 mx-md-4 mt-1">
-                    Website Manager
-                  </p>
+  <section class="vh-100" style="background-color: #117a0dab;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-10">
+          <div class="card" style="border-radius: 1rem;">
+            <div class="row g-0">
+              <div class="col-md-6 col-lg-5 d-none d-md-block">
+                <img
+                  src="/images/food/winePour.jpg"
+                  alt="login form"
+                  class="img-fluid" style="border-radius: 1rem 0 0 1rem; height:100%;"
+                />
+              </div>
+              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                <div class="card-body p-4 p-lg-5 text-black">
+  
+                  <form action="/register" method="POST">
+  
+                    <div class="d-flex align-items-center mb-3 pb-1">
+                      <i class="fas fa-cubes fa-2x me-3" style="color: #940909;"></i>
+                      <span class="h1 fw-bold mb-0">Buon Appetito Register</span>
+                    </div>
+  
+                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign up for an admin account</h5>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-outline mb-2">
+                          <input type="text" name="firstName" class="form-control form-control-lg"
+                          required />
+                          <label class="form-label" for="form2Example17">First Name</label>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
 
-                  <form action="/register" class="mx-1 mx-md-4" method="POST">
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                        <input
-                          name="firstName"
-                          type="text"
-                          id="firstName"
-                          class="form-control input"
-                          required
-                        />
-                        <label class="form-label" for="firstName"
-                          >First Name</label
-                        >
+                        <div class="form-outline mb-2">
+                          <input type="text" name="lastName" class="form-control form-control-lg"
+                          required />
+                          <label class="form-label" for="form2Example17">Last Name</label>
+                        </div>
                       </div>
                     </div>
-
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                        <input
-                          name="lastName"
-                          type="text"
-                          id="lastName"
-                          class="form-control input"
-                          required
-                        />
-                        <label class="form-label" for="lastName"
-                          >Last Name</label
-                        >
-                      </div>
+                    <div class="form-outline mb-2">
+                      <input type="email" name="email" class="form-control form-control-lg"
+                      required />
+                      <label class="form-label" for="form2Example17">Email address</label>
+                    </div>
+  
+                    <div class="form-outline mb-2">
+                      <input name="password" type="password" class="form-control form-control-lg"
+                      required />
+                      <label class="form-label" for="form2Example27">Password</label>
                     </div>
 
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                        <input
-                          name="email"
-                          type="email"
-                          id="email"
-                          class="form-control input"
-                          required
-                        />
-                        <label class="form-label" for="email"
-                          >Your Email</label
-                        >
-                      </div>
+                    <div class="form-outline mb-2">
+                      <input name="passwordTwo" type="password" class="form-control form-control-lg"
+                      required />
+                      <label class="form-label" for="form2Example27">Confirm Password</label>
                     </div>
-
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                        <input
-                          name="password"
-                          type="password"
-                          id="password"
-                          class="form-control input"
-                          required
-                        />
-                        <label class="form-label" for="password"
-                          >Password</label
-                        >
-                      </div>
+  
+                    <div class="pt-1 mb-4">
+                      <button class="btn btn-dark btn-lg btn-block" type="submit">Register</button>
                     </div>
-
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                        <input
-                          name="passwordTwo"
-                          type="password"
-                          id="passwordTwo"
-                          class="form-control input"
-                          required
-                        />
-                        <label class="form-label" for="passwordTwo"
-                          >Repeat your password</label
-                        >
-                      </div>
-                    </div>
-
-                    <div
-                      class="form-check d-flex justify-content-center mb-5"
-                    >
-                      <input
-                        class="form-check-input me-2"
-                        type="checkbox"
-                        value=""
-                        id="form2Example3c"
-                      />
-                      <label class="form-check-label" for="form2Example3">
-                        I agree all statements in
-                        <a href="#!">Terms of service</a>
-                      </label>
-                    </div>
-
-                    <div
-                      class="d-flex justify-content-center mx-4 mb-3 mb-lg-4"
-                    >
-                      <button type="submit" class="btn btn-primary btn-lg">
-                        Register
-                      </button>
-                    </div>
-                    <a href="/login">Already have an account?</a>
+  
+                    <a class="small text-muted" href="#!">Forgot password?</a>
+                    <p class="mb-2 pb-lg-2" style="color: #393f81;">Already have an account? <a href="/login" style="color: #393f81;">Register here</a></p>
+                    <a href="#!" class="small text-muted">Terms of use.</a>
+                    <a href="#!" class="small text-muted">Privacy policy</a>
                   </form>
                 </div>
               </div>
@@ -128,5 +78,7 @@
       </div>
     </div>
   </section>
+
+
 </body>
 </html>
