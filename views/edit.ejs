@@ -4,6 +4,94 @@
   <body>
     <%- include('partials/adminNav.ejs') %>
 
+    <section class="vh-100" style="background-color: #117a0dab;">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col col-xl-10">
+            <div class="card" style="border-radius: 1rem; border: 0;">
+              <div class="row g-0">
+                <div class="col-md-6 col-lg-5 d-none d-md-block">
+                  <img
+                    src="<%= menuItem.foodPhoto %>"
+                    alt="login form"
+                    class="img-fluid" style="border-radius: 1rem 0 0 1rem; height:100%;"
+                  />
+                </div>
+                <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                  <div class="card-body p-4 p-lg-5 text-black">
+    
+                    <form action="/admin/menu/<%= menuItem.id %>?_method=PUT" method="POST">
+    
+                      <div class="d-flex align-items-center mb-3 pb-1">
+                        <i class="bi bi-pencil-square me-3" style="color: #940909;"></i>
+                        <span class="h6  mb-0">Currently making chages to... </span>
+                        <span class="h4  mb-0" style="color: #ca1111;"> <%= menuItem.dishName %></span>
+                      </div>
+  
+                      <div class="form-outline mb-2">
+                        <input type="text" name="dishName" class="form-control form-control-lg" value="<%= menuItem.dishName %>"
+                        required />
+                        <label class="form-label" for="form2Example17">Name</label>
+                      </div>
+    
+                      <div class="form-outline mb-2">
+                        <textarea name="description" type="text" class="form-control form-control-lg"
+                        required><%= menuItem.description %></textarea>
+                        <label class="form-label" for="form2Example27">Description</label>
+                      </div>
+  
+                      <div class="form-outline mb-2">
+                        <input name="foodPhoto" type="text" class="form-control form-control-lg" value="<%= menuItem.foodPhoto %>"/>
+                        <label class="form-label" for="form2Example27">Image</label>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-outline mb-2">
+                            <div class="input-group">
+                              <span class="input-group-text">$</span>
+                              <input type="number" name="lunchPrice" class="form-control form-control-lg"
+                              value="<%= menuItem.lunchPrice %>"
+                              required />
+                            </div>
+                            <label class="form-label" for="form2Example17">Lunch Price</label>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+  
+                          <div class="form-outline mb-2">
+                            <div class="input-group">
+                              <span class="input-group-text">$</span>
+                              <input type="number" name="dinnerPrice" class="form-control form-control-lg"
+                              value="<%= menuItem.dinnerPrice %>"
+                              required />
+                            </div>
+                            <label class="form-label" for="form2Example17">Dinner Price</label>
+                          </div>
+                        </div>
+                      </div>
+
+    
+                      <div class="pt-2 mb-4">
+                        <button class="btn btn-success btn-lg btn-block" type="submit">Create</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+    <!-- end -->
+
       <div class="container">
         
         <div class="row">
