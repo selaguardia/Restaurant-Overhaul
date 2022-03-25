@@ -1,4 +1,5 @@
 const express = require("express");
+const app = express();
 const methodOverride = require("method-override");
 const controllers = require("./controllers");
 // Creates and handles cookies
@@ -8,20 +9,19 @@ const MongoStore = require("connect-mongo");
 
 require("dotenv").config();
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3005; // might need to go above .config()
 
 app.use((req, res, next) => {
   console.log(`METHOD:${req.method} \nOG-URL:${req.originalUrl}`);
   next();
 });
 
-require('./config/db.connections.js')
+require("./config/db.connections.js");
 
 // Middleware
-app.use(express.urlencoded({ extended: false }));   // Body parser
+app.use(express.urlencoded({ extended: false })); // Body parser
 app.set("view engine", "ejs");
-app.use(express.static(__dirname + "/public"));
+app.use(express.static("public"));
 
 // Session Controller
 app.use(
@@ -29,7 +29,7 @@ app.use(
     // this will store the cookies in the mongodb database
     store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
     // secret key will sign the cookie for validation
-    secret: process.env.SECRET,
+    secret: process.env.SECRET_KEY,
     resave: false,
     saveUninitialized: false,
     // cookie config
@@ -39,10 +39,11 @@ app.use(
   })
 );
 // For update / delete
-app.use(methodOverride('_method'));
+app.use(methodOverride("_method"));
 
-const authRequired = (req,res,next) => {
-  if(!req.session.currentUser){
+// Check to see the current user is still valid
+const authRequired = (req, res, next) => {
+  if (!req.session.currentUser) {
     return res.redirect("/login");
   }
   next();
@@ -59,10 +60,6 @@ app.use("/*", (req, res) => {
   return res.status(404).render("404", context);
 });
 
-// app.listen(PORT, (req, res) => {
-//   console.log(`✅ Listening for client requests on Port ${PORT} ✅`);
-// });
-
-app.listen(PORT, () => {
-  console.log(`✅ Listening for client requests on Port ${PORT} ✅`);
+app.listen(port, () => {
+  console.log(`✅ Listening for client requests on Port ${port} ✅`);
 });
