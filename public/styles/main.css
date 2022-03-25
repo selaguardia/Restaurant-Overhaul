@@ -2,12 +2,7 @@
 #menuDishNameAnchor {
   color: green;
 }
-#about, #banquets, #contact {
-  background-image: url(../images/UnderConstruction.png) ;
-  background-position: center;
-  background-position-x: right;
-  height: 100vh;
-}
+
 #signInbg, #registerBg {
   background-image: url(../images/food_bg.jpg) ;
   background-position: center;
@@ -61,5 +56,15 @@ body {
 }
 
 .foodItemImage {
-  height: fit-content;
+  height: 500px;
+}
+
+.containerFormSubmittedMessage {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border: 3px solid whitesmoke;
 }
