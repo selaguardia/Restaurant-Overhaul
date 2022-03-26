@@ -44,7 +44,19 @@ body {
   height: 500px;
 }
 
+/* Footer */
 .locationLink a:hover {
   color: green!important;
 }
-  
+
+/* Navbar */
+.navbar-brand {
+  font-family: 'Special Elite', cursive;
+  font-size: 30px;
+  color:#940909!important;
+}
+
+.nav-item a:hover{
+  color: green!important;
+  border-bottom: 1px solid #940909;
+}
