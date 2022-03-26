@@ -50,7 +50,7 @@ body {
 }
 
 /* Navbar */
-.navbar-brand {
+#navBrandText {
   font-family: 'Special Elite', cursive;
   font-size: 30px;
   color:#940909!important;
