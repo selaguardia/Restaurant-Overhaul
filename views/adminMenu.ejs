@@ -5,109 +5,14 @@
     <%- include('partials/adminNav.ejs') %>
     
 
-<!-- <section class="text-center">
-  <div class="container">
-    <div class="row">
 
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card" style="height: 15rem;">
-          <div class="card-body">
-            <p class="card-text display-4">
-                <a href="/" class="btn btn-primary">
-                Back Home
-              </a>
-              </p>
-            </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card" style="height: 15rem;">
-          <a href="/" class="btn btn-primary">
-            <div class="card-body">
-              <p class="card-text display-4">
-                Edit Menu
-              </p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card" style="height: 15rem;">
-          <a href="/" class="btn btn-primary">
-            <div class="card-body">
-              <p class="card-text display-4">
-                Edit Contact Information
-              </p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card" style="height: 15rem;">
-          <a href="/" class="btn btn-primary">
-            <div class="card-body">
-              <p class="card-text display-4">
-                Add New Menu Item
-              </p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card" style="height: 15rem;">
-          <a href="/" class="btn btn-primary">
-            <div class="card-body">
-              <p class="card-text display-4">
-                Logout
-              </p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card" style="height: 15rem;">
-          <a href="/" class="btn btn-primary">
-            <div class="card-body">
-              <p class="card-text display-4">
-                Home
-              </p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card" style="height: 15rem;">
-          <a href="/" class="btn btn-primary">
-            <div class="card-body">
-              <p class="card-text display-4">
-                Home
-              </p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card" style="height: 15rem;">
-          <a href="/" class="btn btn-primary">
-            <div class="card-body">
-              <p class="card-text display-4">
-                Home
-              </p>
-            </div>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section> -->
 
 
 
     <div class="container">
-      <!-- <div class="row">
+      <div class="row">
         <nav>
-          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <div class="nav nav-tabs mt-3" id="nav-tab" role="tablist">
             <button class="nav-link active" id="nav-appetizers-tab" data-bs-toggle="tab" data-bs-target="#nav-appetizers" type="button" role="tab" aria-controls="nav-appetizers" aria-selected="true">Appetizers</button>
             <button class="nav-link" id="nav-soupSalad-tab" data-bs-toggle="tab" data-bs-target="#nav-soupSalad" type="button" role="tab" aria-controls="nav-soupSalad" aria-selected="false">Soup & Salad</button>
             <button class="nav-link" id="nav-pasta-tab" data-bs-toggle="tab" data-bs-target="#nav-pasta" type="button" role="tab" aria-controls="nav-pasta" aria-selected="false">Pasta</button>
@@ -132,7 +37,35 @@
           <div class="tab-pane fade" id="nav-dessert" role="tabpanel" aria-labelledby="nav-dessert-tab">dessert</div>
           <div class="tab-pane fade" id="nav-drinksBar" role="tabpanel" aria-labelledby="nav-drinksBar-tab">drinksBar</div>
         </div>
-      </div> -->
+      </div>
+      <section class="">
+        <h4 class="mb-5 text-center"><strong>Full Menu</strong></h4>
+  
+        <div class="row">
+          <% for(let idx = menuItems.length -1; idx >= 0; idx--){ %> <% const
+              menuItem = menuItems[idx] %>
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= menuItem.dishName %></h5>
+                    <p class="card-text">
+                      <%= menuItem.description %>
+                    </p>
+                    <p class="card-text">
+                      <%= menuItem.category %>
+                    </p>
+                  </div>
+                </div>
+              </div>
+          <% } %>
+        </div>
+      </section>
+  
+      <hr class="my-5" />
+ 
+  
+      <hr class="my-5" />
+
 
       <div class="row">
         <div class="col d-flex justify-content-center">
