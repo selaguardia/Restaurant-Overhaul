@@ -61,3 +61,30 @@ body {
   border-bottom: 1px solid #940909;
 }
 
+
+.menuFoodCard {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+
+@media (max-width: 991px){
+  .menuFoodCard {
+    width: 100%;
+    height: 25vw;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 767px){
+  .menuFoodCard {
+    width: 100%;
+    height: 50vw;
+    object-fit: cover;
+  }
+}
+
+.menuFoodCardLink {
+  text-decoration: none;
+  
+}
