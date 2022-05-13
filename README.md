@@ -8,9 +8,10 @@
 
 🛠 Technnologies Used:
 
+  - Programming Language: JavaScript
   - MEN Stack (MongoDB, Express, Node.js)
-  - JavaScript and jQuery for DOM manipulation
   - CSS and Bootstrap
+  - Deployed on Heroku
   - Dependencies
     - bcryptjs
     - bootstrap
@@ -25,10 +26,24 @@
 
 👨🏽‍💻 Installation Steps:
 
-Step 1: Fork this repo
-Step 2: Clone this repo inside a local folder on your machine
-Step 3: Run "npm i" on terminal to install all the dependencies
-Step 4: Run nodemon -- Browser should open at this point
+- Step 1: Fork this repo
+- Step 2: Clone this repo inside a local folder on your machine
+- Step 3: Run "npm i" on terminal to install all the dependencies
+- Step 4: Run nodemon -- Browser should open at this point
+
+👨🏽‍💻 Modify Menu Steps:
+- Step 1: Click on top right 'Admin' to login.
+- Step 2: Form is prefilled. Click 'Sign In' or Register for new account. 
+- Click on any food image to go to the dedicated page and access 'Edit' & 'Delete' functionality.
+- Click on 'Add New Menu Item' to add a new dish to the menu.
+- After creating or modifying an item, you can click 'Public Menu' to see the public view on the menu, without the 'Edit' & 'Delete' buttons.
+- ![Screenshots - Landing Page](/planning/Landing.png)
+- ![Screenshots - Login Page](/planning/Login.png)
+- ![Screenshots - Admin Menu Show Page](/planning/MenuShow.png)
+- ![Screenshots - Admin Menu Item Show Page](/planning/MenuItemShow.png)
+- ![Screenshots - Admin Menu Item Edit Page](/planning/MenuItemEdit.png)
+- ![Screenshots - Admin Menu Add Item Page](/planning/MenuItemAdd.png)
+
 
 ✏️ User Stories:
 
@@ -49,19 +64,3 @@ Step 4: Run nodemon -- Browser should open at this point
 
 ✏️ RESTful Routes:
 ![Routes](/planning/RESTFULroutes.png)
-
-💎 Milestones:
-- 9/7/21 ⇒ Create boilerplate and get the server running
-- 9/9/21 ⇒ Models / Views
-- 9/12/21 ⇒ Controllers / Routes
-- 9/13/21 ⇒ User Authentication / Authorization
-- 9/14/21 ⇒ Styling
-- 9/15/21 ⇒ Deployment
-
-🚧 Unsolved Problems:
-
-🤞🏼 Future Features:
-
-- Order food online
-- Make reservations online
-- Menu item show page, every item must have a picture.
