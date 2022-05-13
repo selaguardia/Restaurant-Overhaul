@@ -1,22 +1,10 @@
+body {
+  background-color: #D3D3D3;
+}
 
 #menuDishNameAnchor {
   color: green;
 }
-
-#signInbg, #registerBg {
-  background-image: url(../images/food_bg.jpg) ;
-  background-position: center;
-  background-position-x: right;
-  height: 100vh;
-}
-
-#signInForm {
-  background-color: antiquewhite;
-  padding: 50px 25px;
-  border-radius: 10px;
-}
-
-
 
 .specialsCardImg, .homeAnnouncemenCardsImg {
   float: left;
@@ -24,10 +12,6 @@
   height: 300px;
   object-fit: cover;
 
-}
-
-body {
-  background-color: #D3D3D3;
 }
 
 .card {
@@ -40,11 +24,12 @@ body {
 }
 
 .fa-facebook {
+  color: #4267B2;
   font-size:3rem;
 }
 
 .fa-yelp:hover, .fa-facebook:hover {
-  transform: scale(1.4);
+  transform: scale(1.1);
 }
 
 .landingRow {
@@ -59,12 +44,29 @@ body {
   height: 500px;
 }
 
-.containerFormSubmittedMessage {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  border: 3px solid whitesmoke;
+/* Footer */
+.locationLink a:hover {
+  color: green!important;
+}
+
+/* Navbar */
+#navBrandText {
+  font-family: 'Special Elite', cursive;
+  font-size: 30px;
+  color:#940909!important;
+}
+
+.nav-item a:hover{
+  color: green!important;
+  border-bottom: 1px solid #940909;
+}
+
+#menuItemFoodPhoto {
+  width:400px;
+  height:200px;
+  object-fit: cover;
+}
+
+.menuFoodCardLink {
+  text-decoration: none;
 }
