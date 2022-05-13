@@ -22,6 +22,7 @@
     - express-session
     - method-override
     - mongoose
+    - nodemon
 
 
 👨🏽‍💻 Installation Steps:
