@@ -4,7 +4,7 @@
 
 ✏️ Description:
 
-  The purpose of this projec tis to overhaul a current restaurants static website. Giving the client new capabilities including adding, updating, and deleting items, prices, descriptions, and photos for each menu items. Also, allows for the client to easily add menu items to feature the special of the week.
+  The purpose of this project is to overhaul a current restaurants static website. Giving the client new capabilities including adding, updating, and deleting items, prices, descriptions, and photos for each menu items. 
 
 🛠 Technnologies Used:
 
@@ -29,7 +29,7 @@
 - Step 1: Fork this repo
 - Step 2: Clone this repo inside a local folder on your machine
 - Step 3: Run "npm i" on terminal to install all the dependencies
-- Step 4: Run nodemon -- Browser should open at this point
+- Step 4: Run nodemon in terminal (Browser should open at this point)
 
 👨🏽‍💻 Modify Menu Steps:
 - Step 1: Click on top right 'Admin' to login.
