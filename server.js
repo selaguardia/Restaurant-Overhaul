@@ -9,7 +9,7 @@ const MongoStore = require("connect-mongo");
 
 require("dotenv").config();
 
-const port = process.env.PORT || 3000; 
+const port = process.env.PORT || 5000; 
 
 app.use((req, res, next) => {
   console.log(`METHOD:${req.method} \nOG-URL:${req.originalUrl}`);

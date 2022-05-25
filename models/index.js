@@ -3,5 +3,5 @@ require("../config/db.connections");
 module.exports = {
   Menu: require("./Menu"),
   User: require("./User"),
-  // Hours: require("./Hours"),
+  Hours: require("./Hours"),
 };

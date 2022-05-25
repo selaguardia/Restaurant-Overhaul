@@ -28,5 +28,5 @@ const HoursSchema = new Schema(
   }
 );
 
-const Hours = mongoose.model('Menu', HoursSchema);
+const Hours = mongoose.model('Hours', HoursSchema);
 module.exports = Hours;
