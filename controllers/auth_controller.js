@@ -5,7 +5,7 @@ const { User } = require("../models");
 
 // Register GET
 router.get("/register", (req, res) => {
-  return res.render("auth/register");
+  return res.status(200).render("auth/register");
 });
 
 // Register POST
@@ -24,16 +24,15 @@ router.post("/register", async (req, res) => {
     const hash = await bcrypt.hash(req.body.password, salt); // hash password
     req.body.password = hash;
     const createdUser = await User.create(req.body);
-    return res.redirect("/login");
+    return res.status(200).redirect("/login");
   } catch (error) {
-    console.log(error);
-    return res.send(error);
+    res.status(404).json({ message: error.message });
   }
 });
 
 // Login GET
 router.get("/login", (req, res) => {
-  return res.render("auth/login");
+  return res.status(200).render("auth/login");
 });
 
 // Login POST
@@ -52,10 +51,9 @@ router.post("/login", async (req, res) => {
     req.session.currentUser = {
       id: foundUser._id,
     };
-    return res.redirect("/admin/menu");
+    return res.status(200).redirect("/admin/menu");
   } catch (error) {
-    console.log(error);
-    return res.send(error);
+    res.status(404).json({ message: error.message });
   }
 });
 
@@ -63,10 +61,9 @@ router.post("/login", async (req, res) => {
 router.get("/logout", async (req, res) => {
   try {
     await req.session.destroy();
-    return res.redirect("/");
+    return res.status(200).redirect("/");
   } catch (error) {
-    console.log(error);
-    return res.send(error);
+    res.status(404).json({ message: error.message });
   }
 });
 

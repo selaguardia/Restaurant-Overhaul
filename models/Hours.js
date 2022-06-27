@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 
 const HoursSchema = new Schema(
   {
-    day: { type: Date }, //mon - sun
-    open: { type: Date },
-    close: { type: Date },
+    day: { type: String },
+    open: { type: Number },
+    close: { type: Number },
     user: {
       type: mongoose.Types.ObjectId,
       ref: "User",

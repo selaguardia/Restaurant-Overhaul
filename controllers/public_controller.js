@@ -4,12 +4,12 @@ const router = express.Router();
 
 // Home Route
 router.get("/", (req, res, next) => {
-  res.render("publicAccess/home");
+  res.status(200).render("publicAccess/home");
 });
 
 // About Us Route
 router.get("/about", (req, res, next) => {
-  res.render("publicAccess/about");
+  res.status(200).render("publicAccess/about");
 });
 
 // Menu GET Route
@@ -17,10 +17,9 @@ router.get("/menu", async (req, res, next) => {
   try {
     const allMenuItems = await Menu.find({});
     const context = { menuItems: allMenuItems };
-    return res.render("publicAccess/publicMenu", context);
+    return res.status(200).render("publicAccess/publicMenu", context);
   } catch (error) {
-    console.log(error);
-    req.error = error;
+    res.status(404).json({ message: error.message });
     return next();
   }
 });
@@ -30,22 +29,21 @@ router.get("/menu/:id", async (req, res, next) => {
   try {
     const foundMenuItem = await Menu.findById(req.params.id);
     const context = { menuItem: foundMenuItem };
-    return res.render("publicAccess/show", context);
+    return res.status(200).render("publicAccess/show", context);
   } catch (error) {
-    console.log(error);
-    req.error = error;
+    res.status(404).json({ message: error.message });
     return next();
   }
 });
 
 // Banquets Route
 router.get("/banquets", (req, res, next) => {
-  res.render("publicAccess/banquets");
+  res.status(200).render("publicAccess/banquets");
 });
 
 // Contact Route
 router.get("/contact", (req, res, next) => {
-  res.render("publicAccess/contact");
+  res.status(200).render("publicAccess/contact");
 });
 
 module.exports = router;

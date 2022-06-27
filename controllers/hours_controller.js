@@ -17,7 +17,7 @@ router.get("/storeHours", async (req, res, next) => {
   }
 });
 
-// Update StoreHours POST Route
+// Update StoreHours PUT Route
 router.put("/storeHours", async (req, res, next) => {
   try {
     const updatedStoreHours = await Menu.findByIdAndUpdate(

@@ -7,31 +7,32 @@ router.get("/menu", async (req, res, next) => {
   try {
     const allMenuItems = await Menu.find({});
     const context = { menuItems: allMenuItems };
-    return res.render("adminMenu", context);
+    return res.status(200).render("adminMenu", context);
   } catch (error) {
-    console.log(error);
-    req.error = error;
+    res.status(404).json({ message: error.message });
     return next();
   }
 });
 
 // New Item Form GET Route
 router.get("/menu/new", (req, res) => {
-  const context = {
-    user: req.session.currentUser.id,
-  };
-  res.render("new", context);
+  try {
+    const context = {
+      user: req.session.currentUser.id,
+    };
+    res.status(200).render("new", context);  
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
 });
 
 // Create Item POST Route
 router.post("/menu", async (req, res, next) => {
   try {
     const createdMenuItem = await Menu.create(req.body); 
-    return res.redirect(`/admin/menu/${createdMenuItem.id}`);
+    return res.status(201).redirect(`/admin/menu/${createdMenuItem.id}`);
   } catch (error) {
-    console.log(error)
-    const context = { error };
-    return res.render("new", context);
+    res.status(409).json({ message: error.message });
   }
 });
 
@@ -40,10 +41,9 @@ router.get("/menu/:id", async (req, res, next) => {
   try {
     const foundMenuItem = await Menu.findById(req.params.id);
     const context = { menuItem: foundMenuItem };
-    return res.render("menuItemShow", context);
+    return res.status(200).render("menuItemShow", context);
   } catch (error) {
-    console.log(error);
-    req.error = error;
+    res.status(404).json({ message: error.message });
     return next();
   }
 });
@@ -53,10 +53,9 @@ router.get("/menu/:id/edit", async (req, res, next) => {
   try {
     const foundMenuItem = await Menu.findById(req.params.id);
     const context = { menuItem: foundMenuItem };
-    return res.render("edit", context);
+    return res.status(200).render("edit", context);
   } catch (error) {
-    const context = { error };
-    return res.render("edit", context);
+    res.status(404).json({ message: error.message });
   }
 });
 
@@ -74,9 +73,9 @@ router.put("/menu/:id", async (req, res, next) => {
         new: true,
       },
     );
-    return res.redirect(`/admin/menu/${updatedMenuItem.id}`);
+    return res.status(201).redirect(`/admin/menu/${updatedMenuItem.id}`);
   } catch (error) {
-    const context = { error };
+    res.status(404).json({ message: error.message });
     return next();
   }
 });
@@ -85,10 +84,9 @@ router.put("/menu/:id", async (req, res, next) => {
 router.delete("/menu/:id", async (req, res, next) => {
   try {
     await Menu.findByIdAndDelete(req.params.id);
-    return res.redirect("/admin/menu");
+    return res.status(200).redirect("/admin/menu");
   } catch (error) {
-    console.log(error);
-    req.error = error;
+    res.status(404).json({ message: error.message });
     return next();
   }
 });
