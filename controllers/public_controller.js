@@ -12,7 +12,7 @@ router.get("/about", (req, res, next) => {
   res.render("publicAccess/about");
 });
 
-// Menu GET Route === Refactored to Aysnc/Await & try/catch statement (Public Access)
+// Menu GET Route
 router.get("/menu", async (req, res, next) => {
   try {
     const allMenuItems = await Menu.find({});
@@ -25,7 +25,7 @@ router.get("/menu", async (req, res, next) => {
   }
 });
 
-// MenuItem GET Show Route === Refactored to Aysnc/Await & try/catch statement (Public Access)
+// MenuItem GET Show Route
 router.get("/menu/:id", async (req, res, next) => {
   try {
     const foundMenuItem = await Menu.findById(req.params.id);

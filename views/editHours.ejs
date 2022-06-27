@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head.ejs', { page: 'Edit Store Hours'}) %>
+  <body>
+    <%- include('partials/adminNav.ejs') %>
+    <section class="hours bg-dark text-white">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-8 col-lg-6 my-5">
+            <div class="card">
+              <div class="card-body">
+                <form action="/admin/storeHours/?_method=PUT" method="POST">
+                  <table class="table text-center">
+                    <tbody>
+                      <tr>
+                        <td>Monday:</td>
+                        <td><input type="time" name="mondayOpen"></input></td>
+                        <td><input type="time" name="mondayClose"></input></td>
+                      </tr>
+                      <tr>
+                        <td>Tuesday:</td>
+                        <td><input type="time" name="tuesdayOpen"></input></td>
+                        <td><input type="time" name="tuesdayClose"></input></td>
+                      </tr>
+                      <tr>
+                        <td>Wednesday:</td>
+                        <td><input type="time" name="wednesdayOpen"></input></td>
+                        <td><input type="time" name="wednesdayClose"></input></td>
+                      </tr>
+                      <tr>
+                        <td>Thursday:</td>
+                        <td><input type="time" name="thursdayOpen"></input></td>
+                        <td><input type="time" name="thursdayClose"></input></td>
+                      </tr>
+                      <tr>
+                        <td>Friday:</td>
+                        <td><input type="time" name="fridayOpen"></input></td>
+                        <td><input type="time" name="fridayClose"></input></td>
+                      </tr>
+                      <tr>
+                        <td>Saturday:</td>
+                        <td><input type="time" name="saturdayOpen"></input></td>
+                        <td><input type="time" name="saturdayClose"></input></td>
+                      </tr>
+                      <tr>
+                        <td>Sunday:</td>
+                        <td><input type="time" name="sundayOpen"></input></td>
+                        <td><input type="time" name="sundayClose"></input></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                    <button class="btn btn-success" type="submit">Update Hours</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </body>
+</html>

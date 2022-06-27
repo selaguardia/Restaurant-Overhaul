@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-// Will be used to securely handle user passwords
 const bcrypt = require("bcryptjs");
 const { User } = require("../models");
 
@@ -12,35 +11,19 @@ router.get("/register", (req, res) => {
 // Register POST
 router.post("/register", async (req, res) => {
   try {
-    // if password !== passwordTwo
-    // res.send(passwords do not match )
     if (req.body.password !== req.body.passwordTwo) {
       return res.send("Sorry, your passwords don't match!");
     }
-
-    // check if user exists
     const foundUser = await User.exists({
       $or: [{ email: req.body.email },],
     });
-
-    // if user DOES exist, redirect to login
     if (foundUser) {
-      console.log('foundUser', foundUser);
       return res.redirect("/login");
     }
-
-    // if user DOES NOT exist
-    // create a salt
-    const salt = await bcrypt.genSalt(10);
-    // hash password
-    const hash = await bcrypt.hash(req.body.password, salt);
-
+    const salt = await bcrypt.genSalt(10); // create a salt
+    const hash = await bcrypt.hash(req.body.password, salt); // hash password
     req.body.password = hash;
-
-    // create user
     const createdUser = await User.create(req.body);
-
-    // redirect to login
     return res.redirect("/login");
   } catch (error) {
     console.log(error);
@@ -56,34 +39,19 @@ router.get("/login", (req, res) => {
 // Login POST
 router.post("/login", async (req, res) => {
   try {
-    console.log('foundUser==>', req);
-    // check if user exists
     const foundUser = await User.findOne({ email: req.body.email });
     
-    // if user does not exist
-    // redirect to register
     if (!foundUser) {
       return res.redirect("/register");
     }
-
-    // if user does exist
-    // compare passwords
-    // NOTE Authentication
-    const match = await bcrypt.compare(req.body.password, foundUser.password);
-    
-    // if passwords DO NOT match
-    // send password invalid
+    const match = await bcrypt.compare(req.body.password, foundUser.password)
     if (!match) {
       return res.send("Sorry, password is invalid");
     }
-
-    // if passwords DO match
-    // add the user info to the session
-    // NOTE Credentials
+    // if passwords DO match add the user info to the session Credentials
     req.session.currentUser = {
       id: foundUser._id,
     };
-    // redirect to menu
     return res.redirect("/admin/menu");
   } catch (error) {
     console.log(error);
